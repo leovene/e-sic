@@ -1,0 +1,5 @@
+js/RGraph/demos
+/inc/config.php
+/.idea/
+/restrito/inc/config.php
+.gitignore
