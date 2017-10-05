@@ -1,19 +1,8 @@
-<?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
-?>
 <input type="hidden" name="idsolicitante" value="<?php echo $idsolicitante;?>">
 <table align="center" cellpadding="0" cellspacing="1">
 	<tr>
 		<td>
-                        <?php if(!Solicitacao::existeSicCentralizador()){ //exibe SIC's caso não exista centralizador?>
+                        <?php if(!Solicitacao::existeSicCentralizador()){ //exibe SIC's caso nÃ£o exista centralizador?>
 			<tr>
 				<td align="left">
                                     Destino:

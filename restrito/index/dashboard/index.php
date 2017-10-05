@@ -1,6 +1,4 @@
-<?php 
-
-
+<?php
 require("funcoes.php");
 
 $sic = getSession('sic');

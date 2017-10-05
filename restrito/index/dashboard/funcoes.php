@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 /*
 	Retorna total de demandas por status
 	$status : filtro por status. Exemplo: "'A', 'R'"
@@ -316,7 +315,7 @@ function getStatus($status) {
 	if ($status == "A")
 		return "Aberto";
 	else if ($status == "T")
-		return "Tramitação";
+		return "Tramitaï¿½ï¿½o";
 	else if ($status == "R")
 		return "Respondido";	
 	else if ($status == "N")
@@ -331,12 +330,12 @@ function getOrigem($status) {
 	else if ($status == 3)
 		return "Eu Inspetor";
 	else
-		return "Não classificado";
+		return "Nï¿½o classificado";
 }
 
 
 /*
-	getEnquete - retorna a pesquisa de satisfação do retorno da demanda
+	getEnquete - retorna a pesquisa de satisfaï¿½ï¿½o do retorno da demanda
 */
 function getEnquete() {
 	
@@ -360,7 +359,7 @@ function getEnquete() {
 		else if ($reg['resposta']  == 'B')
 			$resposta = 'Bom';
 		else if ($reg['resposta']  == 'O')
-			$resposta = 'Ótima';
+			$resposta = 'ï¿½tima';
 		
 		$total++;
 		$totais[$reg['resposta']] = $totais[$reg['resposta']] + 1;
@@ -374,7 +373,7 @@ function getEnquete() {
 
 
 /*
-	getFiltroVinculo - retorna o filtro de vínculo do usuário para query 
+	getFiltroVinculo - retorna o filtro de vï¿½nculo do usuï¿½rio para query 
 */
 function getFiltroVinculo() {
 	

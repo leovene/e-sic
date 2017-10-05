@@ -1,13 +1,4 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
  include("manutencao.php");
  include("../inc/topo.php");
  $urlArquivo = getURL("lda");
@@ -85,7 +76,7 @@
 
     function executaOperacao(acao)
     {
-        if(confirm("Confirma operação?"))
+        if(confirm("Confirma operaï¿½ï¿½o?"))
         {
             document.getElementById("acao").value = acao;
             document.getElementById("formulario").submit();
@@ -130,11 +121,11 @@
                 </td>
                 <td align="left" valign="top">
                     <b>Solicita&ccedil;&atilde;o Recebida em</b> <br>
-                    &nbsp;&nbsp;<?php echo !empty($datarecebimentosolicitacao)?$datarecebimentosolicitacao." por ".$usuariorecebimento:"Não Recebido";?>
+                    &nbsp;&nbsp;<?php echo !empty($datarecebimentosolicitacao)?$datarecebimentosolicitacao." por ".$usuariorecebimento:"Nï¿½o Recebido";?>
                 </td>
                 <td align="left" valign="top">
                     <b>Porroga&ccedil;&atilde;o</b> <br>
-                    &nbsp;&nbsp;<?php echo !empty($dataprorrogacao)?"Prorrogado em: ".$dataprorrogacao." por ".$usuarioprorrogacao. "<br>&nbsp;&nbsp;Motivo: ".$motivoprorrogacao:"Não Prorrogado";?>
+                    &nbsp;&nbsp;<?php echo !empty($dataprorrogacao)?"Prorrogado em: ".$dataprorrogacao." por ".$usuarioprorrogacao. "<br>&nbsp;&nbsp;Motivo: ".$motivoprorrogacao:"Nï¿½o Prorrogado";?>
                 </td>
         </tr>
         <tr id="lnDemanda3">
@@ -238,7 +229,7 @@
 			</table>
 		</td>
 	</tr>
-        <?php if($instancia == "I") { //se for solicitação inicial, mostra os recursos se houver
+        <?php if($instancia == "I") { //se for solicitaï¿½ï¿½o inicial, mostra os recursos se houver
             
                 $rsRec = Solicitacao::getRecursos($idsolicitacao);
                 if(mysqli_num_rows($rsRec) > 0)

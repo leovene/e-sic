@@ -1,15 +1,4 @@
-<!--?xml version = "1.0" ?-->
-
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
  include("manutencao.php");
  include_once("../inc/security.php");
  include("../inc/topo.php");
@@ -19,7 +8,7 @@
 <script language="JavaScript" src="../js/XmlHttpLookup.js"></script>
 
 <script src="inc/js/functions.js"></script>
-<h1>Informação da Solicitação</h1>
+<h1>InformaÃ§Ã£o da SolicitaÃ§Ã£o</h1>
 <br><br>
 <script>
     function fechaTudo(){
@@ -90,7 +79,7 @@
 
     function executaOperacao(acao)
     {
-        if(confirm("Confirma operação?"))
+        if(confirm("Confirma operaÃ§Ã£o?"))
         {
             document.getElementById("acao").value = acao;
             document.getElementById("formulario").submit();
@@ -196,11 +185,11 @@
                 </td>
                 <td align="left" valign="top">
                     <b>Solicita&ccedil;&atilde;o Recebida em</b> <br>
-                    &nbsp;&nbsp;<?php echo !empty($datarecebimentosolicitacao)?$datarecebimentosolicitacao." por ".$usuariorecebimento:"Não Recebido";?>
+                    &nbsp;&nbsp;<?php echo !empty($datarecebimentosolicitacao)?$datarecebimentosolicitacao." por ".$usuariorecebimento:"NÃ£o Recebido";?>
                 </td>
                 <td align="left" valign="top">
                     <b>Porroga&ccedil;&atilde;o</b> <br>
-                    &nbsp;&nbsp;<?php echo !empty($dataprorrogacao)?"Prorrogado em: ".$dataprorrogacao." por ".$usuarioprorrogacao. "<br>&nbsp;&nbsp;Motivo: ".$motivoprorrogacao:"Não Prorrogado";?>
+                    &nbsp;&nbsp;<?php echo !empty($dataprorrogacao)?"Prorrogado em: ".$dataprorrogacao." por ".$usuarioprorrogacao. "<br>&nbsp;&nbsp;Motivo: ".$motivoprorrogacao:"NÃ£o Prorrogado";?>
                 </td>
         </tr>
         <tr id="lnDemanda3">
@@ -278,7 +267,7 @@
         <?php 
         //$permiterecurso = true;
         $permiterecurso = Solicitacao::getPodeRecurso($idsolicitacao,$idsolicitacaoorigem);
-        if($instancia == "I") { //se for solicitação inicial, mostra os recursos se houver
+        if($instancia == "I") { //se for solicitaÃ§Ã£o inicial, mostra os recursos se houver
             
                 $existerecurso = true;
                 $rsRec = Solicitacao::getRecursos($idsolicitacao);
@@ -346,7 +335,7 @@
 		<td colspan="4">
                     <br>
                     <?php 
-                    //com resposta negada ou não, e permitir recurso, pode ser possivel solicitar recurso
+                    //com resposta negada ou nÃ£o, e permitir recurso, pode ser possivel solicitar recurso
                     if( ($situacao == "N" or $situacao == "R") and $permiterecurso) 
                     { 
                         ?>

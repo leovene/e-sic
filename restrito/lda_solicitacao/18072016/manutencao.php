@@ -1,13 +1,4 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
 	include_once("../inc/autenticar.php");
 	include_once("../inc/security.php");
 
@@ -22,10 +13,10 @@
 	$fltsituacao       = $_REQUEST["fltsituacao"];
 	$receber           = $_REQUEST["receber"];
 	
-	$parametrosIndex = "fltnumprotocolo=$fltnumprotocolo&fltsolicitante=$fltsolicitante&fltsituacao=$fltsituacao"; //parametros a ser passado para a pagina de detalhamento, fazendo com que ao voltar para o index traga as informações passadas anteriormente
+	$parametrosIndex = "fltnumprotocolo=$fltnumprotocolo&fltsolicitante=$fltsolicitante&fltsituacao=$fltsituacao"; //parametros a ser passado para a pagina de detalhamento, fazendo com que ao voltar para o index traga as informaï¿½ï¿½es passadas anteriormente
 	//-----
         
-	//se for passado código para edição e nao tiver sido postado informação do formulario busca dados do banco
+	//se for passado cï¿½digo para ediï¿½ï¿½o e nao tiver sido postado informaï¿½ï¿½o do formulario busca dados do banco
 	if(!$_POST['acao'] and !empty($codigo))
 	{
 		$acao = "Alterar";
@@ -119,12 +110,12 @@
 		$uf                         = $_POST['uf'];
 		$sistemaOrigem				= $_POST['origem'];
 	
-		//campos da movimentação
+		//campos da movimentaï¿½ï¿½o
 		$idsecretariadestino        = $_POST['idsecretariadestino'];
 		$despacho                   = $_POST['despacho'];
 		$anexomovimentacao          = $_FILES["anexomovimentacao"]; 	
 		
-		//campos da finalização
+		//campos da finalizaï¿½ï¿½o
 		$txtresposta                = $_POST['txtresposta'];
 		$tiporesposta               = $_POST['tiporesposta'];
 		$arquivos                   = $_FILES["arquivos"]; 	
@@ -136,26 +127,26 @@
 	$erro	= "";
 	$valida = $_GET["tk"];
 	if ($valida <> md5($codigo . SIS_TOKEN)) {
-		//echo "<script>alert('Demanda não pertence ao seu SIC - ". getSession("sic")[getSession("idsecretaria")][1] . "')</script>";
+		//echo "<script>alert('Demanda nï¿½o pertence ao seu SIC - ". getSession("sic")[getSession("idsecretaria")][1] . "')</script>";
 		//echo "<script>javascript:document.location='?lda_consulta';</script>";
 	}
 	
 	if ($_POST['acao'])
 	{
-		//se for uma movimentação
+		//se for uma movimentaï¿½ï¿½o
 		if ($acao == "Enviar")
 		{
 			checkPerm("LDAMOVIMENTAR");
 			$erro = Solicitacao::movimenta($idsolicitacao, $idsecretariadestino, $despacho, $anexomovimentacao);
 			if (empty($erro))
 			{
-				logger("Movimentou solicitação.");
+				logger("Movimentou solicitaï¿½ï¿½o.");
 				//header("Location: index.php?lda_solicitacao");
 				echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=index.php?lda_solicitacao&$parametrosIndex'>";
 				
 			} 
 		}
-		//se for uma finalização
+		//se for uma finalizaï¿½ï¿½o
 		elseif ($acao == "Finalizar")
 		{
 			checkPerm("LDARESPONDER");
@@ -163,11 +154,11 @@
 
 			if (empty($erro))
 			{
-				logger("Finalizou solicitação.");
+				logger("Finalizou solicitaï¿½ï¿½o.");
 				echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=index.php?lda_solicitacao&$parametrosIndex'>";
 			}
 		}
-		//se for uma prorrogação
+		//se for uma prorrogaï¿½ï¿½o
 		elseif ($acao == "Prorrogar")
 		{
 			checkPerm("LDAPRORROGAR");
@@ -175,7 +166,7 @@
 
 			if (empty($erro))
 			{
-				logger("Prorrogou solicitação.");
+				logger("Prorrogou solicitaï¿½ï¿½o.");
 				echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=index.php?lda_solicitacao&$parametrosIndex'>";
 			}
 		}

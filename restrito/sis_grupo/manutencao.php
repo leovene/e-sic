@@ -1,17 +1,8 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
 	include_once("../inc/autenticar.php");
 	checkPerm("LSTGRP");
 	
-	//função de validação dos dados do formulario do cadastro de usuario -------------------
+	//funï¿½ï¿½o de validaï¿½ï¿½o dos dados do formulario do cadastro de usuario -------------------
 	function validaDados()
 	{
 		global $erro;
@@ -23,17 +14,17 @@
 				
 		if (empty($nome))
 		{
-			$erro = "Nome não informado.";
+			$erro = "Nome nï¿½o informado.";
 			return false;
 		}
 		else if (empty($descricao))
 		{
-			$erro = "Descrição não informada.";
+			$erro = "Descriï¿½ï¿½o nï¿½o informada.";
 			return false;
 		}
 
 
-		//verifica se ja existe registro cadastrado com a informaçao passada ---
+		//verifica se ja existe registro cadastrado com a informaï¿½ao passada ---
 		if ($acao=="Incluir")
 			$sql = "select * from sis_grupo where nome = '$nome'";
 		else
@@ -41,7 +32,7 @@
 			
 		if(mysqli_num_rows(execQuery($sql)) > 0)
 		{
-			$erro = "Nome do perfil já existe no cadastro.";
+			$erro = "Nome do perfil jï¿½ existe no cadastro.";
 			return false;
 		}
 		//-----------------------------------------------------------------------
@@ -75,11 +66,11 @@
         $descricao      = $_POST["descricao"];
         $ativo	        = $_POST["ativo"];
         
-	//se tiver sido postado informação do formulario
+	//se tiver sido postado informaï¿½ï¿½o do formulario
 	if ($_POST['acao'])
 	{
 		
-		//verifica ação do usuario
+		//verifica aï¿½ï¿½o do usuario
 		switch ($acao)
 		{
 			//se for uma inclusao
@@ -102,7 +93,7 @@
 					}
 				}
 				break;
-			//se for uma alteração
+			//se for uma alteraï¿½ï¿½o
 			case "Alterar":  		
 				checkPerm("UPTGRP");	
 				

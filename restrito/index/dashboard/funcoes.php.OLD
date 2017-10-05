@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 /*
 	Retorna total de demandas por status
 	$status : filtro por status. Exemplo: "'A', 'R'"
@@ -316,7 +315,7 @@ function getStatus($status) {
 	if ($status == "A")
 		return "Aberto";
 	else if ($status == "T")
-		return "Tramitação";
+		return "Tramitaï¿½ï¿½o";
 	else if ($status == "R")
 		return "Respondido";	
 	else if ($status == "N")
@@ -331,7 +330,7 @@ function getOrigem($status) {
 	else if ($status == 3)
 		return "Eu Inspetor";
 	else
-		return "Não classificado";
+		return "Nï¿½o classificado";
 }
 
 ?>

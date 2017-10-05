@@ -1,24 +1,15 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-		
 	    include_once("../inc/security.php");
 		include_once("../class/solicitacao.class.php");
 		
 	
 	
-	$erro   = "";	//grava o erro, se houver, e exibe por meio de alert (javascript) atraves da funcao getErro() chamada no arquivo do formulario. ps: a função é declara em inc/security.php
+	$erro   = "";	//grava o erro, se houver, e exibe por meio de alert (javascript) atraves da funcao getErro() chamada no arquivo do formulario. ps: a fun??o ? declara em inc/security.php
 
         $acao 	= "";
         
 	
-	//se tiver sido postado informação do formulario
+	//se tiver sido postado informa??o do formulario
 	if($_POST['acao'])
 	{
 
@@ -44,7 +35,7 @@
 		}else{
 		
 				enviadados();
-				echo "<script>alert('Solicitação enviada com sucesso!');location.href='index.php?ok=1';</script>";
+				echo "<script>alert('Solicita??o enviada com sucesso!');location.href='index.php?ok=1';</script>";
 				
 				$solicitante = null;
 		

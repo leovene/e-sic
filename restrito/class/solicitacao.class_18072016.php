@@ -1,13 +1,4 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
 //se a classe for chamada pela area restrita do lei de acesso
 if (empty($varAreaRestrita))
 {
@@ -42,10 +33,10 @@ class Solicitacao {
 	private $idsecretariaresposta;
 	private $erro;	
         
-	//campos de movimentação
+	//campos de movimentaï¿½ï¿½o
 	private $idsecretariadestino;
 	private $despacho;
-	//campos de finalização
+	//campos de finalizaï¿½ï¿½o
 	private $tiporesposta;
         
         
@@ -166,7 +157,7 @@ class Solicitacao {
 	public function setIdTipoSolicitacao($valor){
 		$this->idtiposolicitacao = $valor;
 	}
-	//descrição tipo solicitação
+	//descriï¿½ï¿½o tipo solicitaï¿½ï¿½o
 	public static function getDescricaoTipoSolicitacao($idtiposolicitacao){
             
                 $rs = execQuery("select nome from lda_tiposolicitacao where idtiposolicitacao = $idtiposolicitacao");
@@ -177,7 +168,7 @@ class Solicitacao {
                         return $row["nome"];
                 }	
                 else
-                    return "Tipo de solicitação não encontrado";
+                    return "Tipo de solicitaï¿½ï¿½o nï¿½o encontrado";
                 
 	}
         
@@ -197,7 +188,7 @@ class Solicitacao {
 		$this->numeroprotocolo = $numero."/".$ano;
 	}
 
-        //secretaria selecionada (pelo usuario na hora de fazer a solicitação)
+        //secretaria selecionada (pelo usuario na hora de fazer a solicitaï¿½ï¿½o)
 	public function getIdSecretariaSelecionada(){
 		return $this->idsecretariaselecionada;
 	}
@@ -213,7 +204,7 @@ class Solicitacao {
 		$this->formaretorno = $valor;
 	}
 
-	//descrição tipo retorno
+	//descriï¿½ï¿½o tipo retorno
 	public static function getDescricaoFormaRetorno($formaretorno){
 		switch($formaretorno)       
 			{
@@ -224,13 +215,13 @@ class Solicitacao {
 			}
 	}
 
-	//descrição tipo de instancia
+	//descriï¿½ï¿½o tipo de instancia
 	public static function getDescricaoTipoInstancia($instancia){
 		switch($instancia)       
                 {
                     case "I": return "Inicial"; break;
                     case "S": return "Seguimento"; break; 
-                    case "U": return "Última"; break; 
+                    case "U": return "ï¿½ltima"; break; 
                     default: return "Instancia inexistente";
                 }
 	}
@@ -242,15 +233,15 @@ class Solicitacao {
 	public function setSituacao($valor){
 		$this->situacao = $valor;
 	}	
-	//descrição situacao
+	//descriï¿½ï¿½o situacao
 	public static function getDescricaoSituacao($situacao){
 		switch($situacao)       
                 {
                     case "A": return "Aberto"; break;
                     case "T": return "Em tramitacao"; break; 
                     case "N": return "Negado"; break; 
-                    case "R": return "Solicitação Respondida"; break;
-                    default: return "Situação inexistente";
+                    case "R": return "Solicitaï¿½ï¿½o Respondida"; break;
+                    default: return "Situaï¿½ï¿½o inexistente";
                 }
 	}
 	
@@ -329,7 +320,7 @@ class Solicitacao {
 			$this->idsecretariaresposta			= $row["idsecretariaresposta"];						
 		}
 		else
-			die("Solicitação nao informada");
+			die("Solicitaï¿½ï¿½o nao informada");
 	}
 
 	public static function getParametrosConfiguracao()
@@ -343,10 +334,10 @@ class Solicitacao {
         }
 
 
-        //recupera a instancia do tipo de solicitação passado: [I]inicial - [S]eguimento - [U]ltima
+        //recupera a instancia do tipo de solicitaï¿½ï¿½o passado: [I]inicial - [S]eguimento - [U]ltima
        	public static function getInstaciaTipoSolicitacao($idtiposolicitacao)
         {
-                //recupera a instancia do tipo de solicitação
+                //recupera a instancia do tipo de solicitaï¿½ï¿½o
                 $sql = "select instancia from lda_tiposolicitacao where idtiposolicitacao = $idtiposolicitacao";
                 $rs = execQuery($sql);
 
@@ -357,12 +348,12 @@ class Solicitacao {
         }
         
         
-        //recupera o proximo tipo de solicitação para uma solicitação informada
+        //recupera o proximo tipo de solicitaï¿½ï¿½o para uma solicitaï¿½ï¿½o informada
        	public function getProximoTipoSolicitacao($idsolicitacao="",&$idtiposolicitacao, &$erro="")
         {
             $erro="";
             
-            //se for passado uma solicitação
+            //se for passado uma solicitaï¿½ï¿½o
             if(!empty($idsolicitacao))
             {
                 //recupera o proximo tipo de solicitacao
@@ -377,23 +368,23 @@ class Solicitacao {
                     $row = mysqli_fetch_array($rs);
                     $idtiposolicitacao = $row['idtiposolicitacao_seguinte'];
 
-                    //se não for encontrado novo tipo de solicitação
+                    //se nï¿½o for encontrado novo tipo de solicitaï¿½ï¿½o
                     if(empty($idtiposolicitacao))
                     {
-                        $erro = "Não é possível inserir novo recurso para essa solicitação, pois essa solicitação já está na última instância.";
+                        $erro = "Nï¿½o ï¿½ possï¿½vel inserir novo recurso para essa solicitaï¿½ï¿½o, pois essa solicitaï¿½ï¿½o jï¿½ estï¿½ na ï¿½ltima instï¿½ncia.";
                         return false;
                     }
                 }
                 else
                 {
-                    $erro = "Não foi encontrado tipo de solicitação para essa solicitação";
+                    $erro = "Nï¿½o foi encontrado tipo de solicitaï¿½ï¿½o para essa solicitaï¿½ï¿½o";
                     return false;
                 }
                 
             }
             else
             {
-                //recupera a solicitação inicial
+                //recupera a solicitaï¿½ï¿½o inicial
                 $sql = "select idtiposolicitacao from lda_tiposolicitacao where instancia = 'I'";
                 $rs = execQuery($sql);
 
@@ -404,7 +395,7 @@ class Solicitacao {
                 }                
                 else
                 {
-                    $erro = "Não foi encontrado instância inicial cadastrada no sistema.";
+                    $erro = "Nï¿½o foi encontrado instï¿½ncia inicial cadastrada no sistema.";
                     return false;
                 }
             }
@@ -420,7 +411,7 @@ class Solicitacao {
 		{
 			if (empty($this->idsolicitacaoorigem))
 			{
-				$this->erro = "Processo não informado.";
+				$this->erro = "Processo nï¿½o informado.";
 				return false;
 			}
                     
@@ -428,17 +419,17 @@ class Solicitacao {
                     
 		if (empty($this->textosolicitacao))
 		{
-			$this->erro = "Especificação da solicitação não informada.";
+			$this->erro = "Especificaï¿½ï¿½o da solicitaï¿½ï¿½o nï¿½o informada.";
 			return false;
 		}
 		elseif (empty($this->formaretorno))
 		{
-			$this->erro = "Forma de retorno não informado";
+			$this->erro = "Forma de retorno nï¿½o informado";
 			return false;
 		}
 		elseif (empty($this->idsolicitante))
 		{
-			$this->erro = "Solicitante não informado";
+			$this->erro = "Solicitante nï¿½o informado";
 			return false;
 		}
 		
@@ -447,21 +438,21 @@ class Solicitacao {
                     $rs = execQuery("select logradouro, uf, cidade, telefone, dddtelefone from lda_solicitante where idsolicitante = $this->idsolicitante");
                     $row = mysqli_fetch_array($rs);
                     
-                    //se a forma de retorno for correio, verifica se existe endereço cadastrado
+                    //se a forma de retorno for correio, verifica se existe endereï¿½o cadastrado
                     if($this->formaretorno == "C" and (empty($row['logradouro']) or empty($row['uf']) or empty($row['cidade'])))
                     {
-                            $this->erro = "Para forma de retorno via correio é necessário atualizar o endereço no seu cadastro.";
+                            $this->erro = "Para forma de retorno via correio ï¿½ necessï¿½rio atualizar o endereï¿½o no seu cadastro.";
                             return false;
                     }
                     //se a forma de retorno for telefone
                     elseif($this->formaretorno == "F" and (empty($row['telefone']) or empty($row['dddtelefone'])))
                     {
-                            $this->erro = "Para forma de retorno via correio é necessário atualizar o telefone no seu cadastro.";
+                            $this->erro = "Para forma de retorno via correio ï¿½ necessï¿½rio atualizar o telefone no seu cadastro.";
                             return false;
                     }
                 }
                 
-		//verifica se ja existe registro cadastrado com a informaçao passada ---
+		//verifica se ja existe registro cadastrado com a informaï¿½ao passada ---
 		if (!empty($this->idsolicitacao))
 			$sql = "select * from lda_solicitacao 
 					where textosolicitacao = '$this->textosolicitacao' 
@@ -477,7 +468,7 @@ class Solicitacao {
 				
 		if(mysqli_num_rows(execQuery($sql)) > 0)
 		{
-			$this->erro = "Essa solicitação já está cadastrada.";
+			$this->erro = "Essa solicitaï¿½ï¿½o jï¿½ estï¿½ cadastrada.";
 			return false;
 		}
 		//-----------------------------------------------------------------------
@@ -486,9 +477,9 @@ class Solicitacao {
 	}
 
         
-        //envia email de aviso de nova solicitação para o SIC 
+        //envia email de aviso de nova solicitaï¿½ï¿½o para o SIC 
         //secretaria -> recebe o idsecretaria ou sigla
-        //tipomsg    -> identifica o tipo de mensagem: [M]ovimentação - [N]ova solicitação - [R]ecurso
+        //tipomsg    -> identifica o tipo de mensagem: [M]ovimentaï¿½ï¿½o - [N]ova solicitaï¿½ï¿½o - [R]ecurso
         public static function enviaEmailSic($secretaria, $tipomsg="M")
         {
                 //recupera o email do SIC
@@ -507,43 +498,43 @@ class Solicitacao {
                 //se houver email cadastrado, faz o envio
                 if(!empty($emailsic))
                 {
-                    //se for movimentação
+                    //se for movimentaï¿½ï¿½o
                     if($tipomsg == "M")
                     {
-                        $titulo = "Movimentação de solicitação de informação";
+                        $titulo = "Movimentaï¿½ï¿½o de solicitaï¿½ï¿½o de informaï¿½ï¿½o";
                         $body="Prezado(a) colaborador(a),<br> <br>
-                                Foi movimentada uma solicitação de informação para o seu órgão. Favor verificar a demanda no sistema ".SISTEMA_NOME." no endereço: ".URL_BASE_SISTEMA."<br><br>
-                                Mensagem Automática do Sistema ".SISTEMA_NOME;
+                                Foi movimentada uma solicitaï¿½ï¿½o de informaï¿½ï¿½o para o seu ï¿½rgï¿½o. Favor verificar a demanda no sistema ".SISTEMA_NOME." no endereï¿½o: ".URL_BASE_SISTEMA."<br><br>
+                                Mensagem Automï¿½tica do Sistema ".SISTEMA_NOME;
                     }
-                    //se for nova solicitação
+                    //se for nova solicitaï¿½ï¿½o
                     else if($tipomsg == "N")
                     {
-                        $titulo = "Nova de solicitação de informação";
+                        $titulo = "Nova de solicitaï¿½ï¿½o de informaï¿½ï¿½o";
                         $body="Prezado(a) colaborador(a),<br> <br>
-                                Foi aberta uma solicitação de informação. Favor verificar a demanda no sistema ".SISTEMA_NOME." no endereço: ".URL_BASE_SISTEMA."<br><br>
-                                Mensagem Automática do Sistema ".SISTEMA_NOME;
+                                Foi aberta uma solicitaï¿½ï¿½o de informaï¿½ï¿½o. Favor verificar a demanda no sistema ".SISTEMA_NOME." no endereï¿½o: ".URL_BASE_SISTEMA."<br><br>
+                                Mensagem Automï¿½tica do Sistema ".SISTEMA_NOME;
                     }
                     //se for novo recurso
                     else if($tipomsg == "R")
                     {
-                        $titulo = "Novo recurso de solicitação de informação";
+                        $titulo = "Novo recurso de solicitaï¿½ï¿½o de informaï¿½ï¿½o";
                         $body="Prezado(a) colaborador(a),<br> <br>
-                                Foi aberta uma solicitação de informação. Favor verificar a demanda no sistema ".SISTEMA_NOME." no endereço: ".URL_BASE_SISTEMA."<br><br>
-                                Mensagem Automática do Sistema ".SISTEMA_NOME;
+                                Foi aberta uma solicitaï¿½ï¿½o de informaï¿½ï¿½o. Favor verificar a demanda no sistema ".SISTEMA_NOME." no endereï¿½o: ".URL_BASE_SISTEMA."<br><br>
+                                Mensagem Automï¿½tica do Sistema ".SISTEMA_NOME;
                     }
                     else
                     {
-                        $titulo = "Solicitação de informação";
+                        $titulo = "Solicitaï¿½ï¿½o de informaï¿½ï¿½o";
                         $body="Prezado(a) colaborador(a),<br> <br>
-                                Foi aberta uma solicitação de informação. Favor verificar a demanda no sistema ".SISTEMA_NOME." no endereço: ".URL_BASE_SISTEMA."<br><br>
-                                Mensagem Automática do Sistema ".SISTEMA_NOME;
+                                Foi aberta uma solicitaï¿½ï¿½o de informaï¿½ï¿½o. Favor verificar a demanda no sistema ".SISTEMA_NOME." no endereï¿½o: ".URL_BASE_SISTEMA."<br><br>
+                                Mensagem Automï¿½tica do Sistema ".SISTEMA_NOME;
                     }
                     
 					if (!empty($emailsic) and !empty($body)) {
 						if(!sendMail($emailsic,$titulo,$body))						
 						{	
 							//caso de erro loga o erro
-							logger("Lei de acesso - Não foi possível enviar e-mail para o SIC: $emailsic");
+							logger("Lei de acesso - Nï¿½o foi possï¿½vel enviar e-mail para o SIC: $emailsic");
 						}
 					}
                 }
@@ -552,7 +543,7 @@ class Solicitacao {
         
         //envia email de aviso para o solicitante
         //secretaria -> recebe o idsecretaria ou sigla
-        //tipomsg    -> identifica o tipo de mensagem: [N]ova solicitação - [P]rorrogada - [R]esposta da solicitação
+        //tipomsg    -> identifica o tipo de mensagem: [N]ova solicitaï¿½ï¿½o - [P]rorrogada - [R]esposta da solicitaï¿½ï¿½o
         public static function enviaEmailSolicitante($idsolicitacao, $tipomsg="N")
         {
                 //recupera o email do solicitante
@@ -576,37 +567,37 @@ class Solicitacao {
                 //se houver email cadastrado, faz o envio
                 if(!empty($email))
                 {
-                    //se for movimentação
+                    //se for movimentaï¿½ï¿½o
                     if($tipomsg == "N")
                     {
-                        $titulo = "Solicitação cadastrada";
+                        $titulo = "Solicitaï¿½ï¿½o cadastrada";
                         $body="Prezado(a) $nome,<br> <br>
-                                Sua solicitação <b>$processo</b> foi cadastrada com sucesso.<br><br>
+                                Sua solicitaï¿½ï¿½o <b>$processo</b> foi cadastrada com sucesso.<br><br>
                                 Data prevista para resposta: $dataprevisaoresposta
-                                <br><br>Para acompanhar o andamento, acesse o sistema ".SISTEMA_NOME." no endereço: ".URL_SITE_SISTEMA.".<br><br>
-                                Mensagem Automática do Sistema ".SISTEMA_NOME;
+                                <br><br>Para acompanhar o andamento, acesse o sistema ".SISTEMA_NOME." no endereï¿½o: ".URL_SITE_SISTEMA.".<br><br>
+                                Mensagem Automï¿½tica do Sistema ".SISTEMA_NOME;
                     }
                     //se for resposta
                     else if($tipomsg == "R")
                     {
-                        $titulo = "Sua solicitação foi respondida";
+                        $titulo = "Sua solicitaï¿½ï¿½o foi respondida";
                         $body="Prezado(a) $nome,<br> <br>
-                                Sua solicitação <b>$processo</b> foi respondida. Para mais informações acesse o sistema ".SISTEMA_NOME." no endereço: ".URL_SITE_SISTEMA.".<br><br>
-                                Mensagem Automática do Sistema ".SISTEMA_NOME;
+                                Sua solicitaï¿½ï¿½o <b>$processo</b> foi respondida. Para mais informaï¿½ï¿½es acesse o sistema ".SISTEMA_NOME." no endereï¿½o: ".URL_SITE_SISTEMA.".<br><br>
+                                Mensagem Automï¿½tica do Sistema ".SISTEMA_NOME;
                     }
                     //se for prorrogada
                     else if($tipomsg == "P")
                     {
-                        $titulo = "A resposta a sua solicitação foi prorrogada";
+                        $titulo = "A resposta a sua solicitaï¿½ï¿½o foi prorrogada";
                         $body="Prezado(a) $nome,<br> <br>
-                                O atendimento a sua solicitação <b>$processo</b> foi prorrogado, data de previsão de resposta: $dataprevisaoresposta. Para mais informações acesse o sistema ".SISTEMA_NOME." no endereço: ".URL_SISTEMA_NOME.".<br><br>
-                                Mensagem Automática do Sistema ".SISTEMA_NOME;
+                                O atendimento a sua solicitaï¿½ï¿½o <b>$processo</b> foi prorrogado, data de previsï¿½o de resposta: $dataprevisaoresposta. Para mais informaï¿½ï¿½es acesse o sistema ".SISTEMA_NOME." no endereï¿½o: ".URL_SISTEMA_NOME.".<br><br>
+                                Mensagem Automï¿½tica do Sistema ".SISTEMA_NOME;
                     }
                     
                     if (!sendmail($email,$titulo,$body))
                     {   
                             //caso de erro loga o erro
-                            logger("Lei de acesso - Não foi possível enviar e-mail para o solicitante: $email");
+                            logger("Lei de acesso - Nï¿½o foi possï¿½vel enviar e-mail para o solicitante: $email");
                     }
                 }
             
@@ -621,10 +612,10 @@ class Solicitacao {
 			$configuracao = $this->getParametrosConfiguracao();
 			$prazoresposta = $configuracao['prazoresposta'];
                         
-            //recupera o proximo tipo de solicitação, caso retorne falso, deu erro
+            //recupera o proximo tipo de solicitaï¿½ï¿½o, caso retorne falso, deu erro
             if(!$this->getProximoTipoSolicitacao("",$idtiposolicitacao,$this->erro))
             {
-            	$this->erro = "Erro ao inserir solicitação #1.";
+            	$this->erro = "Erro ao inserir solicitaï¿½ï¿½o #1.";
 				return false;
             }
 
@@ -653,7 +644,7 @@ class Solicitacao {
 			if (!mysqli_query($con,$sql))
 			{
 				echo mysqli_error();
-				$this->erro = "Erro ao inserir solicitação #2.";//.$sql;
+				$this->erro = "Erro ao inserir solicitaï¿½ï¿½o #2.";//.$sql;
 				return false;
 			}
 			else
@@ -674,14 +665,14 @@ class Solicitacao {
                 }
                 else
                 {
-					$this->erro = "Erro ao inserir solicitação #3."; //.$sql;
+					$this->erro = "Erro ao inserir solicitaï¿½ï¿½o #3."; //.$sql;
 					return false;
                 }
 
                 //se tiver sido selecionado um SIC
                 if(!empty($this->idsecretariaselecionada))
                 {
-                    //envia email de aviso de nova solicitação ao SIC centralizador
+                    //envia email de aviso de nova solicitaï¿½ï¿½o ao SIC centralizador
                     Solicitacao::enviaEmailSic($rec['idsecretaria'],"N");
                 }
                 else
@@ -697,14 +688,14 @@ class Solicitacao {
                     {    
                         while($rec = mysqli_fetch_array($rs))
                         {
-                            //envia email de aviso de nova solicitação ao SIC centralizador
+                            //envia email de aviso de nova solicitaï¿½ï¿½o ao SIC centralizador
                             Solicitacao::enviaEmailSic($rec['idsecretaria'],"N");
 
                         }
                     }
                 }
                                 
-                //envia email de aviso de cadastro de solicitação ao solicitante
+                //envia email de aviso de cadastro de solicitaï¿½ï¿½o ao solicitante
                 Solicitacao::enviaEmailSolicitante($this->idsolicitacao,"N");                                
 			}
 			
@@ -749,7 +740,7 @@ class Solicitacao {
 			if (!mysqli_query($con,$sql))
 			{
                             
-				$this->erro = "Erro ao inserir solicitação".$sql;
+				$this->erro = "Erro ao inserir solicitaï¿½ï¿½o".$sql;
 				$sucesso = false;
 			}
 			else
@@ -761,7 +752,7 @@ class Solicitacao {
                                 //se tiver sido selecionado um SIC
                                 if(!empty($this->idsecretariaselecionada))
                                 {
-                                    //envia email de aviso de nova solicitação ao SIC centralizador
+                                    //envia email de aviso de nova solicitaï¿½ï¿½o ao SIC centralizador
                                     Solicitacao::enviaEmailSic($rec['idsecretaria'],"N");
                                 }
                                 else
@@ -777,14 +768,14 @@ class Solicitacao {
                                     {    
                                         while($rec = mysqli_fetch_array($rs))
                                         {
-                                            //envia email de aviso de nova solicitação ao SIC centralizador
+                                            //envia email de aviso de nova solicitaï¿½ï¿½o ao SIC centralizador
                                             Solicitacao::enviaEmailSic($rec['idsecretaria'],"N");
 
                                         }
                                     }
                                 }
                                 
-                                //envia email de aviso de cadastro de solicitação ao solicitante
+                                //envia email de aviso de cadastro de solicitaï¿½ï¿½o ao solicitante
                                 Solicitacao::enviaEmailSolicitante($this->idsolicitacaoorigem,"N");
                                 
                                 
@@ -813,11 +804,11 @@ class Solicitacao {
 			$sql = "select count(*) as tot from lda_movimentacao where idsolicitacao = $idsolicitacao";                
 			$row = mysqli_fetch_array(execQuery($sql));
 			
-			//se existir movimentação
+			//se existir movimentaï¿½ï¿½o
 			if($row["tot"] > 0)
 			{
-				//Não permite movimentar se a última movimentação não tiver sido dado o recebimento.
-				//Também não permite movimentar se o SIC de destino for diferente do SIC do usuário logado.
+				//Nï¿½o permite movimentar se a ï¿½ltima movimentaï¿½ï¿½o nï¿½o tiver sido dado o recebimento.
+				//Tambï¿½m nï¿½o permite movimentar se o SIC de destino for diferente do SIC do usuï¿½rio logado.
 				$sql = "select 
 							count(*) as tot, idsecretariadestino 
 						from 
@@ -828,12 +819,12 @@ class Solicitacao {
 				
 				$row = mysqli_fetch_array(execQuery($sql));
 				
-				//se ultima movimentação nao tiver sido recebida
+				//se ultima movimentaï¿½ï¿½o nao tiver sido recebida
 				if($row["tot"] > 0)
 					if ($row["idsecretariadestino"] <> getSession("idsecretaria"))
-						return "A demanda não pode ser movimentada. A demanda não encontra-se mais no seu setor.";
+						return "A demanda nï¿½o pode ser movimentada. A demanda nï¿½o encontra-se mais no seu setor.";
 					else
-						return "A demanda não pode ser movimentada. A demanda não ainda não foi recebida.";
+						return "A demanda nï¿½o pode ser movimentada. A demanda nï¿½o ainda nï¿½o foi recebida.";
 			}
 
 			//recupera o status da demanda
@@ -867,7 +858,7 @@ class Solicitacao {
 			{
 				$con->rollback();
 				//echo $sql;
-				return "Erro na movimentação da solicitação #1.";
+				return "Erro na movimentaï¿½ï¿½o da solicitaï¿½ï¿½o #1.";
 			}
 			else
 			{
@@ -898,19 +889,19 @@ class Solicitacao {
 					}
 				}
 				
-				//se o status da demanda for "aberto" altera para "em tramitação"
+				//se o status da demanda for "aberto" altera para "em tramitaï¿½ï¿½o"
 				if($status == "A")
 				{
 					$sql = "update lda_solicitacao set situacao = 'T' where idsolicitacao=$idsolicitacao";
 					if (!$con->query($sql)) 
 					{
 						$con->rollback();
-						return "Ocorreu um erro ao atualizar a situação da solicitação #1";
+						return "Ocorreu um erro ao atualizar a situaï¿½ï¿½o da solicitaï¿½ï¿½o #1";
 					}
 				}
 				$con->commit();
 				
-				//envia email de aviso de nova solicitação ao SIC de destino
+				//envia email de aviso de nova solicitaï¿½ï¿½o ao SIC de destino
 				Solicitacao::enviaEmailSic($secretariadestino,"M");
 				
 			}
@@ -923,7 +914,7 @@ class Solicitacao {
 			$row = mysqli_fetch_array(execQuery($sql));
 			$situacao = $row['situacao'];
 			
-			//se a situação for aberta (não houve tramitação), da o recebimento inicial da solicitação
+			//se a situaï¿½ï¿½o for aberta (nï¿½o houve tramitaï¿½ï¿½o), da o recebimento inicial da solicitaï¿½ï¿½o
 			if ($situacao == "A")
 			{
 				$sql = "UPDATE 
@@ -936,23 +927,23 @@ class Solicitacao {
 
 				if (!execQuery($sql)) 
 					//die($sql);
-					return "Erro no recebimento da solicitação";
+					return "Erro no recebimento da solicitaï¿½ï¿½o";
 
 			}
 			else
 			{
 			
-				//verifica se já houve recebimento
+				//verifica se jï¿½ houve recebimento
 				$sql = "select count(*) as tot, idsecretariadestino from lda_movimentacao 
 						where idmovimentacao = (select max(idmovimentacao) from lda_movimentacao where idsolicitacao = $idsolicitacao)
 						and datarecebimento is null";
 
 				$row = mysqli_fetch_array(execQuery($sql));
 
-				//se a ultima movimentação nao tiver sido recebida, executa o recebimento
+				//se a ultima movimentaï¿½ï¿½o nao tiver sido recebida, executa o recebimento
 				if($row["tot"] > 0)
 				{    
-					//verifica se o usuario é do SIC de destino
+					//verifica se o usuario ï¿½ do SIC de destino
 					$sql = "select count(*) as tot from lda_movimentacao 
 							where idmovimentacao = (select max(idmovimentacao) from lda_movimentacao where idsolicitacao = $idsolicitacao)
 							and idsecretariadestino = ".getSession("idsecretaria");
@@ -972,12 +963,12 @@ class Solicitacao {
 									and datarecebimento is null";
 
 						if (!execQuery($sql)) 					   
-							return "Erro no recebimento da solicitação";
+							return "Erro no recebimento da solicitaï¿½ï¿½o";
 
 					}
 					else
 					{
-						return "Usuário não pertence a secretaria de destino";
+						return "Usuï¿½rio nï¿½o pertence a secretaria de destino";
 					}
 				}
 			}
@@ -993,7 +984,7 @@ class Solicitacao {
             return ($row['tot']>0);
         }
         
-        //retorna consulta de movimentações da solicitação
+        //retorna consulta de movimentaï¿½ï¿½es da solicitaï¿½ï¿½o
         public static function getMovimentacao($idsolicitacao)
         {
             
@@ -1010,7 +1001,7 @@ class Solicitacao {
             return execQuery($sql);
         }
 
-        //retorna consulta com os recursos da solicitação
+        //retorna consulta com os recursos da solicitaï¿½ï¿½o
         public static function getRecursos($idsolicitacao)
         {
             
@@ -1023,10 +1014,10 @@ class Solicitacao {
             return execQuery($sql);
         }
 
-        //retorna se ainda cabe recurso para a solicitação
+        //retorna se ainda cabe recurso para a solicitaï¿½ï¿½o
         public static function getPodeRecurso($idsolicitacao, $idsolicitacaoorigem)
         {
-            //recupera o id do tipo de solicitação seguinte a atual
+            //recupera o id do tipo de solicitaï¿½ï¿½o seguinte a atual
             $sql = "select idtiposolicitacao_seguinte 
                     from lda_tiposolicitacao 
                     where idtiposolicitacao = (select idtiposolicitacao 
@@ -1037,12 +1028,12 @@ class Solicitacao {
             $row = mysqli_fetch_array($result);
             $idtiposolicitacaoseguinte = $row['idtiposolicitacao_seguinte'];
             
-            //se não houver solicitação seguinte, é a de ultima instancia, portanto não cabe mais recurso
+            //se nï¿½o houver solicitaï¿½ï¿½o seguinte, ï¿½ a de ultima instancia, portanto nï¿½o cabe mais recurso
             if(empty($idtiposolicitacaoseguinte))
                 return false;
             else
             {
-                //verifica se existe recurso pedido para a solicitação passada
+                //verifica se existe recurso pedido para a solicitaï¿½ï¿½o passada
                 $sql = "select *
                         from lda_solicitacao
                         where idsolicitacaoorigem = $idsolicitacaoorigem 
@@ -1064,7 +1055,7 @@ class Solicitacao {
 
                 if(empty($resposta))
                 {
-                    return "O campo Observação deve ser preenchido";
+                    return "O campo Observaï¿½ï¿½o deve ser preenchido";
                 }
                 
                 
@@ -1084,7 +1075,7 @@ class Solicitacao {
                 if (!$con->query($sql))
                 {	
                 	die($con->error);
-                    $erro = "Ocorreu um erro ao atualizar solicitação #2";
+                    $erro = "Ocorreu um erro ao atualizar solicitaï¿½ï¿½o #2";
                     $all_query_ok = false;
                 }
                 else
@@ -1156,7 +1147,7 @@ class Solicitacao {
                 {
                     $con->commit();
                     
-                    //envia email de aviso de cadastro de solicitação ao solicitante
+                    //envia email de aviso de cadastro de solicitaï¿½ï¿½o ao solicitante
                     Solicitacao::enviaEmailSolicitante($idsolicitacao,"R");
 
                     return "";
@@ -1182,7 +1173,7 @@ class Solicitacao {
                 $rs = execQuery($sql);
                 $row = mysqli_fetch_array($rs);
                 
-                //se não for prorrogação de primeira instancia
+                //se nï¿½o for prorrogaï¿½ï¿½o de primeira instancia
                 if($row['instancia'] != "I")
                     $prazoresposta = $configuracao['qtdeprorrogacaorecurso'];
                 else
@@ -1198,11 +1189,11 @@ class Solicitacao {
 
 		if (!execQuery($sql)) 		
                 {
-                    return "Erro na prorrogação da solicitação";
+                    return "Erro na prorrogaï¿½ï¿½o da solicitaï¿½ï¿½o";
                 }
                 else
                 {
-                    //envia email de aviso de cadastro de solicitação ao solicitante
+                    //envia email de aviso de cadastro de solicitaï¿½ï¿½o ao solicitante
                     Solicitacao::enviaEmailSolicitante($idsolicitacao,"P");
 
                 }

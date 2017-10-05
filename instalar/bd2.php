@@ -1,5 +1,4 @@
 <?php
-
 require_once("../inc/config.php");
 // Configuração de banco de dados
 //define("DBHOST", "*");

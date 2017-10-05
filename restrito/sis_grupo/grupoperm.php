@@ -1,13 +1,4 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
 include "../inc/autenticar.php";
 
 checkPerm("CHPERM");
@@ -66,12 +57,12 @@ if ($_GET["idgrupo"] and !$_POST["updt"]) {
 	
 	<div class="container-fluid">
 	    <header class="header-title">
-	        <h1>Permissões do Perfil <?php echo $nomegrupo; ?></h1>
+	        <h1>Permissï¿½es do Perfil <?php echo $nomegrupo; ?></h1>
 	       	<ol class="breadcrumb">
 	            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">Dashboard</a></li>
-	            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?lda_configuracao">Administração</a></li>
+	            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?lda_configuracao">Administraï¿½ï¿½o</a></li>
 	            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?sis_grupo">Perfis</a></li>
-	            <li class="active">Permissões</li>
+	            <li class="active">Permissï¿½es</li>
 	        </ol>
 	    </header>
 	</div>

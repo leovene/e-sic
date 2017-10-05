@@ -1,22 +1,13 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
 	include_once("../inc/autenticar.php");
 	//include_once("../class/solicitante.class.php");
 	include_once("./solicitante.class.php"); //o mesmo arquivo foi adicionado na pasta solicitante e modigficado para nao interferi no cadastro de usuarios
 	
 	
-	$erro = "";	//grava o erro, se houver, e exibe por meio de alert (javascript) atraves da funcao getErro() chamada no arquivo do formulario. ps: a função é declara em inc/security.php
+	$erro = "";	//grava o erro, se houver, e exibe por meio de alert (javascript) atraves da funcao getErro() chamada no arquivo do formulario. ps: a funï¿½ï¿½o ï¿½ declara em inc/security.php
 
 	
-	//se tiver sido postado informação do formulario
+	//se tiver sido postado informaï¿½ï¿½o do formulario
 	if($_POST['acao'])
 	{
 
@@ -79,7 +70,7 @@
 		
 		if(!empty($idsolicitante))
 		{
-			//resgata os dados do banco para exibição no form
+			//resgata os dados do banco para exibiï¿½ï¿½o no form
 			$solicitante = new Solicitante($idsolicitante);
                 
                         

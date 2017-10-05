@@ -1,13 +1,4 @@
 <?php
-/* * ********************************************************************************
-  Sistema e-SIC Livre: sistema de acesso a informaÁ„o baseado na lei de acesso.
-
-  Copyright (C) 2014 Prefeitura Municipal do Natal
-
-  Este programa È software livre; vocÍ pode redistribuÌ-lo e/ou
-  modific·-lo sob os termos da LicenÁa GPL2.
- * ********************************************************************************* */
-
 include("../inc/autenticar.php");
 include("../index/dashboard/funcoes.php");
 checkPerm("LDACONSULTAR");
@@ -27,7 +18,7 @@ $sicDestino 	= $_REQUEST["fltsecdestino"];
 $month			= $_REQUEST["fltmonth"];
 $abeRes			= $_REQUEST["fltAbeRes"];
 
-$parametrosIndex = "fltnumprotocolo=$numprotocolo&fltsolicitante=$solicitante&fltsituacao=$situacao&fltorigem=$origem"; //parametros a ser passado para a pagina de detalhamento, fazendo com que ao voltar para o index traga as informaÁıes passadas anteriormente
+$parametrosIndex = "fltnumprotocolo=$numprotocolo&fltsolicitante=$solicitante&fltsituacao=$situacao&fltorigem=$origem"; //parametros a ser passado para a pagina de detalhamento, fazendo com que ao voltar para o index traga as informa√ß√µes passadas anteriormente
 
 if (!empty($numprotocolo))
     $filtro.= " and concat(sol.numprotocolo,'/',sol.anoprotocolo) = '$numprotocolo'";
@@ -45,18 +36,18 @@ if (!empty($month) && !empty($abeRes))
 	else if ($abeRes == 'R')
 		$filtro.= " and month(sol.dataresposta) = $month";
 
-//seleciona as solicitaÁıes
+//seleciona as solicita√ß√µes
 /*
- * Quando a situaÁ„o for A ou T, trata da primeira tramitaÁ„o do processo. 
+ * Quando a situa√ß√£o for A ou T, trata da primeira tramita√ß√£o do processo. 
  */
 $rs		= getDemandas($filtro);
 
 ?>
 <div class="container-fluid">
     <header class="header-title">
-        <h1>Pesquisa de SolicitaÁıes do Lei de Acesso</h1>
+        <h1>Pesquisa de Solicita√ß√µes do Lei de Acesso</h1>
         <ol class="breadcrumb">
-            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">InÌcio</a></li>
+            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">In√≠cio</a></li>
             <li class="active">Consulta</li>
         </ol>
     </header>
@@ -72,7 +63,7 @@ $rs		= getDemandas($filtro);
                     <div class="col-md-2 col-xs-12">
                         <div class="form-group">
                             <label for="protocolo" class="input-label"><i class="material-icons">insert_drive_file</i></label>
-                            <input placeholder="N∫ do protocolo" class="form-control icon awesomplete" type="text" name="fltnumprotocolo" id="protocolo" value="<?php echo $numprotocolo; ?>" maxlength="50" data-list="<?php while ($registro = mysql_fetch_array($rs)) { ?><?=$registro["numprotocolo"] . '/' . $registro["anoprotocolo"] . ', ';?><?php }; mysql_data_seek ($rs,0); ?>">
+                            <input placeholder="N¬∫ do protocolo" class="form-control icon awesomplete" type="text" name="fltnumprotocolo" id="protocolo" value="<?php echo $numprotocolo; ?>" maxlength="50" data-list="<?php while ($registro = mysql_fetch_array($rs)) { ?><?=$registro["numprotocolo"] . '/' . $registro["anoprotocolo"] . ', ';?><?php }; mysql_data_seek ($rs,0); ?>">
                         </div>
                     </div>
                     <div class="col-md-2 col-xs-12">
@@ -87,7 +78,7 @@ $rs		= getDemandas($filtro);
                             <select name="fltsituacao" id="fltsituacao" class="selectpicker icon">
                                 <option value="" <?php echo empty($situacao) ? "selected" : ""; ?>>Todos</option>
                                 <option value="'A'" <?php echo $situacao == "A" ? "selected" : ""; ?>>Aberto</option>
-                                <option value="'T'" <?php echo $situacao == "T" ? "selected" : ""; ?>>Em tramitaÁ„o</option>
+                                <option value="'T'" <?php echo $situacao == "T" ? "selected" : ""; ?>>Em tramita√ß√£o</option>
                                 <option value="'N'" <?php echo $situacao == "N" ? "selected" : ""; ?>>Negado</option>
                                 <option value="'R'" <?php echo $situacao == "R" ? "selected" : ""; ?>>Respondido</option>
                             </select>
@@ -112,8 +103,8 @@ $rs		= getDemandas($filtro);
     <div class="container-fluid">
          <div class="map-color">
             <ul>
-				<li><span style="background-color: #00ff00;"></span> SolicitaÁ„o Respondida</li>
-                <li><span style="background-color: #fff;"></span> Ainda est· no prazo</li>
+				<li><span style="background-color: #00ff00;"></span> Solicita√ß√£o Respondida</li>
+                <li><span style="background-color: #fff;"></span> Ainda est√° no prazo</li>
                 <li><span style="background-color: #ef4e3a;"></span> Prazo de resposta expirado</li>
                 <li><span style="background-color: #f0b840;"></span> Prazo de resposta perto de expirar</li>
             </ul>
@@ -131,9 +122,9 @@ $rs		= getDemandas($filtro);
                         <th class="text-center">Origem</th>
                         <th class="text-center">Destino</th>
                         <th class="text-center">Prazo Restante</th>
-                        <th>Previs„o Resposta</th>
+                        <th>Previs√£o Resposta</th>
                         <th width="100">Prorrogado</th>
-                        <th>SituaÁ„o</th>
+                        <th>Situa√ß√£o</th>
                         <!--th>Sistema</th-->
                         <th class="none-print"></th>
                     </tr>
@@ -155,11 +146,11 @@ $rs		= getDemandas($filtro);
 						}
                         //se tiver passado do prazo de resposta	sem ter sido respondida				
                         elseif ($registro['prazorestante'] < 0 and (empty($registro['dataresposta']))) {
-							$corLinha = "#ef4e3a"; //vermelho - Urgente! Passou do prazo de resoluÁ„o
+							$corLinha = "#ef4e3a"; //vermelho - Urgente! Passou do prazo de resolu√ß√£o
 						}
                         //se faltar entre 1 e 5 dias para expirar o prazo de resposta
                         elseif ($registro['prazorestante'] >= 0 and $registro['prazorestante'] <= 5) {
-                            $corLinha = "#f0b840"; //amarelo - Alerta! Est· perto de expirar
+                            $corLinha = "#f0b840"; //amarelo - Alerta! Est√° perto de expirar
                         }
                     
                     $clickMovimento = $confirmacao . "editar('" . $registro["idsolicitacao"] . "&$parametrosIndex','../lda_solicitacao/visualizar');";
@@ -178,7 +169,7 @@ $rs		= getDemandas($filtro);
                         <td class="text-center" onClick="<?php echo $clickMovimento; ?>"><?php echo strtoupper($registro["secretariadestino"]); ?></td>
                         <td class="text-center" onClick="<?php echo $clickMovimento; ?>"><?php echo $registro["prazorestante"]; ?></td>
                         <td onClick="<?php echo $clickMovimento; ?>"><?php echo bdToDate($registro["dataprevisaoresposta"]); ?></td>
-                        <td onClick="<?php echo $clickMovimento; ?>"><?php echo (!empty($registro["dataprorrogacao"])) ? "Sim" : "N„o"; ?></td>
+                        <td onClick="<?php echo $clickMovimento; ?>"><?php echo (!empty($registro["dataprorrogacao"])) ? "Sim" : "N√£o"; ?></td>
                         <td onClick="<?php echo $clickMovimento; ?>"><?php echo Solicitacao::getDescricaoSituacao($registro["situacao"]); ?></td>
                         <!--td><?php echo Solicitacao::getOrigem($registro["origem"]); ?></td-->
                         <td class="none-print"></td>

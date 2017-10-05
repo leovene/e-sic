@@ -1,13 +1,4 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
 	include_once("../inc/autenticar.php");
 
         // Verifica se o grupo foi selecionado
@@ -38,7 +29,7 @@
             return false;
         }        
         
-	// Função de validação dos dados do formulário do cadastro de usuário ----------
+	// Funï¿½ï¿½o de validaï¿½ï¿½o dos dados do formulï¿½rio do cadastro de usuï¿½rio ----------
 	function validaDados()
 	{
 		global $erro;
@@ -56,32 +47,32 @@
 		
 		if (empty($nome))
 		{
-			$erro = "Nome não informado.";
+			$erro = "Nome nï¿½o informado.";
 			return false;
 		}
 		elseif (empty($login))
 		{
-			$erro = "Login não informado.";
+			$erro = "Login nï¿½o informado.";
 			return false;
 		}
 		elseif (empty($status))
 		{
-			$erro = "Status não informado";
+			$erro = "Status nï¿½o informado";
 			return false;
 		}
 		elseif (empty($idsecretaria))
 		{
-			$erro = "SIC não informado";
+			$erro = "SIC nï¿½o informado";
 			return false;
 		}
 		elseif (empty($cpfusuario) || !isCpf($cpfusuario))
 		{
-			$erro = "CPF Inválido.";
+			$erro = "CPF Invï¿½lido.";
 			return false;
 		}
                 if (empty($gruposselecionados))
 		{
-			$erro = "Perfil(is) não informado(s)";
+			$erro = "Perfil(is) nï¿½o informado(s)";
 			return false;
 		}
                 if (empty($idusuario) and empty($chave))
@@ -91,7 +82,7 @@
 		}
 
 
-		//verifica se ja existe registro cadastrado com a informaçao passada ---
+		//verifica se ja existe registro cadastrado com a informaï¿½ao passada ---
 		
 		if ($acao=="Incluir")
 			$sql = "select * from sis_usuario where cpfusuario = '$cpfusuario'";
@@ -100,8 +91,8 @@
 			
 		if(mysqli_num_rows(execQuery($sql)) > 0)
 		{
-			//$erro = "Já existe usuario cadastrado com o login informado";
-			$erro = "Já existe usuario cadastrado com o CPF informados";
+			//$erro = "Jï¿½ existe usuario cadastrado com o login informado";
+			$erro = "Jï¿½ existe usuario cadastrado com o CPF informados";
 			return false;
 		}
 
@@ -112,7 +103,7 @@
 			
 		if(mysqli_num_rows(execQuery($sql)) > 0)
 		{
-			$erro = "Já existe usuario cadastrado com o login informado";
+			$erro = "Jï¿½ existe usuario cadastrado com o login informado";
 			return false;
 		}
 
@@ -123,7 +114,7 @@
 			
 		if(mysqli_num_rows(execQuery($sql)) > 0)
 		{
-			$erro = "Já existe usuario cadastrado com a matricula informada";
+			$erro = "Jï¿½ existe usuario cadastrado com a matricula informada";
 			return false;
 		}
                 
@@ -136,7 +127,7 @@
 	$codigo = $_GET["codigo"];
 	$acao	= "Incluir";
 	
-	//se for passado codigo para edição e nao tiver sido postado informação do formulario busca dados do banco
+	//se for passado codigo para ediï¿½ï¿½o e nao tiver sido postado informaï¿½ï¿½o do formulario busca dados do banco
 	if(!$_POST['Alterar'] and !empty($codigo))
 	{
 		$acao	= "Alterar";
@@ -277,7 +268,7 @@
 			
 		}
 	}
-	//se for uma alteração
+	//se for uma alteraï¿½ï¿½o
 	elseif ($_POST['Alterar'])
 	{
 		$acao	= "Alterar";	

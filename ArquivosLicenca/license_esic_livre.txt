@@ -1,6 +1,6 @@
-<--- Copyright [2014] do [Secretaria Municipal de Planejamento, Fazenda e Tecnologia da Informação (Sempla – Natal /RN)]
+<--- Copyright [2014] do [Secretaria Municipal de Planejamento, Fazenda e Tecnologia da Informaï¿½ï¿½o (Sempla ï¿½ Natal /RN)]
 
- Este arquivo é parte do programa 
- O [e-SIC Livre] é um software livre; você pode redistribuí-lo e/ou modificá-lo dentro dos termos da Licença Pública Geral GNU como publicada pela Fundação do Software Livre (FSF); na versão 2 da Licença.
- Este programa é distribuído na esperança que possa ser  útil, mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer  MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a Licença Pública Geral GNU/GPL em português para maiores detalhes.
- Você deve ter recebido uma cópia da Licença Pública Geral GNU, sob o título "LICENCA.txt", junto com este programa, se não, acesse o Portal do Software Público Brasileiro no endereço www.softwarepublico.gov.br ou escreva para a Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301, USA --->
+ Este arquivo ï¿½ parte do programa 
+ O [e-SIC Livre] ï¿½ um software livre; vocï¿½ pode redistribuï¿½-lo e/ou modificï¿½-lo dentro dos termos da Licenï¿½a Pï¿½blica Geral GNU como publicada pela Fundaï¿½ï¿½o do Software Livre (FSF); na versï¿½o 2 da Licenï¿½a.
+ Este programa ï¿½ distribuï¿½do na esperanï¿½a que possa ser  ï¿½til, mas SEM NENHUMA GARANTIA; sem uma garantia implï¿½cita de ADEQUAï¿½ï¿½O a qualquer  MERCADO ou APLICAï¿½ï¿½O EM PARTICULAR. Veja a Licenï¿½a Pï¿½blica Geral GNU/GPL em portuguï¿½s para maiores detalhes.
+ Vocï¿½ deve ter recebido uma cï¿½pia da Licenï¿½a Pï¿½blica Geral GNU, sob o tï¿½tulo "LICENCA.txt", junto com este programa, se nï¿½o, acesse o Portal do Software Pï¿½blico Brasileiro no endereï¿½o www.softwarepublico.gov.br ou escreva para a Fundaï¿½ï¿½o do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301, USA --->

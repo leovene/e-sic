@@ -1,20 +1,7 @@
-<?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-?>
-
-				<!--/div-->
-				
 					<div id="rodape">
 					
 						<div id="rodapetexto1">
-							SEMPLA desenvolvimento. Seguimos as seguintes recomendações de projeto:
+                            Desenvolvido por: <a href="http://www.sasquati.com.br" target="_blank">Sasquati</a>
 						</div>
                                        
 						<div id="iconesw3c" >
@@ -24,7 +11,7 @@
 
 						</div>
 						<div id="rodapetexto2">
-							Produzido com tecnologias livres, socialmente justas para um desenvolvimento sustentável.
+							Produzido com tecnologias livres, socialmente justas para um desenvolvimento sustent?vel.
 						</div>
 					</div>
 				</div>

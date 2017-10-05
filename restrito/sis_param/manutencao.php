@@ -1,17 +1,8 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
 	include_once("../inc/autenticar.php");
 	checkPerm("LSTPARAM");
 	
-	//função de validação dos dados do formulario do cadastro de usuario -------------------
+	//funï¿½ï¿½o de validaï¿½ï¿½o dos dados do formulario do cadastro de usuario -------------------
 	function validaDados()
 	{
 		global $erro;
@@ -22,28 +13,28 @@
 				
 		if (empty($sistema))
 		{
-			$erro = "SISTEMA não informado.";
+			$erro = "SISTEMA nï¿½o informado.";
 			return false;
 		}
 		else if (empty($diretorioarquivos))
 		{
-			$erro = "Diretorio de Arquivos não informado.";
+			$erro = "Diretorio de Arquivos nï¿½o informado.";
 			return false;
 		}
 		else if (empty($urlarquivos))
 		{
-			$erro = "URL dos Arquivos não informado.";
+			$erro = "URL dos Arquivos nï¿½o informado.";
 			return false;
 		}
 		
-		//verifica se ja existe registro cadastrado com a informaçao passada ---
+		//verifica se ja existe registro cadastrado com a informaï¿½ao passada ---
 		if ($acao=="Incluir")
 		{
 			$sql = "select * from sis_param where sistema = '$sistema'";
 			
 			if(mysqli_num_rows(execQuery($sql)) > 0)
 			{
-				$erro = "Nome do Sistema já existe no cadastro.";
+				$erro = "Nome do Sistema jï¿½ existe no cadastro.";
 				return false;
 			}
 		}
@@ -71,7 +62,7 @@
 	$acao	= "Incluir";
 	$erro	= "";
 	
-	//se tiver sido postado informação do formulario
+	//se tiver sido postado informaï¿½ï¿½o do formulario
 	if ($_POST['acao'])
 	{
 		//recupera valores do formulario
@@ -80,7 +71,7 @@
 		$diretorioarquivos = $_POST["diretorioarquivos"];
 		$urlarquivos	   = $_POST["urlarquivos"];
 		
-		//verifica ação do usuario
+		//verifica aï¿½ï¿½o do usuario
 		switch ($acao)
 		{
 			//se for uma inclusao
@@ -103,7 +94,7 @@
 					}
 				}
 				break;
-			//se for uma alteração
+			//se for uma alteraï¿½ï¿½o
 			case "Alterar":  		
 				checkPerm("UPTPARAM");	
 				

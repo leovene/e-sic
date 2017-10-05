@@ -1,5 +1,4 @@
 <?php
-// Verifica permissões de escrita
 if ( (is_writable("../inc/config.php") and is_writable("../restrito/inc/config.php")) or
 	( !(file_exists("../inc/config.php") and file_exists("../restrito/inc/config.php")) and
 	(is_writable("../inc/") and is_writable("../restrito/inc/"))) and

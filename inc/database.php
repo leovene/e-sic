@@ -1,13 +1,4 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
 require_once("config.php");
 
 function db_open() {
@@ -20,7 +11,7 @@ function db_close($conn) {
     mysqli_close($conn) or die ("nao pode fechar a conexao");
 }
 
-//retorna objeto de conexao com o banco para transações
+//retorna objeto de conexao com o banco para transaï¿½ï¿½es
 function db_open_trans()
 {
 	//conecta ao mysqli

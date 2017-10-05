@@ -1,16 +1,7 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
 	include_once("../inc/autenticar.php");
 
-	//função de validação dos dados do formulario do cadastro de usuario -------------------
+	//funï¿½ï¿½o de validaï¿½ï¿½o dos dados do formulario do cadastro de usuario -------------------
 	function validaDados()
 	{
 		global $erro;
@@ -25,12 +16,12 @@
 				
 		if (empty($nome))
 		{
-			$erro = "Nome não informado.";
+			$erro = "Nome nï¿½o informado.";
 			return false;
 		}
 		elseif (empty($sigla))
 		{
-			$erro = "Sigla não informada.";
+			$erro = "Sigla nï¿½o informada.";
 			return false;
 		}
 		
@@ -38,7 +29,7 @@
 		
                 if(empty($siccentral)) $siccentral = "0";
 		
-		//verifica se ja existe registro cadastrado com a informaçao passada ---
+		//verifica se ja existe registro cadastrado com a informaï¿½ao passada ---
 		
 		if ($acao=="Incluir")
 			$sql = "select * from sis_secretaria where sigla = '$sigla'";
@@ -47,7 +38,7 @@
 			
 		if(mysqli_num_rows(execQuery($sql)) > 0)
 		{
-			$erro = "Já existe SIC cadastrada com a sigla informada";
+			$erro = "Jï¿½ existe SIC cadastrada com a sigla informada";
 			return false;
 		}
 		//-----------------------------------------------------------------------
@@ -59,7 +50,7 @@
 	$codigo = $_GET["codigo"];
 	$acao	= "Incluir";
 
-	//se for passado codigo para edição e nao tiver sido postado informação do formulario busca dados do banco
+	//se for passado codigo para ediï¿½ï¿½o e nao tiver sido postado informaï¿½ï¿½o do formulario busca dados do banco
 	if(!$_POST['Alterar'] and !empty($codigo))
 	{
 		$acao	= "Alterar";
@@ -118,7 +109,7 @@
 			}
 		}
 	}
-	//se for uma alteração
+	//se for uma alteraï¿½ï¿½o
 	elseif ($_POST['Alterar'])
 	{
 	   	$acao	= "Alterar";	

@@ -1,7 +1,6 @@
 <?php
 return;
 	include_once("../inc/database.php");
-
     if (!empty($_FILES['arquivo']))
     {
 		$con = db_open();

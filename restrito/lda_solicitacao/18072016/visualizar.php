@@ -1,13 +1,4 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
  include("manutencao.php");
  $urlArquivo = getURL("lda");
 ?>
@@ -16,11 +7,11 @@
 <script src="inc/js/functions.js"></script>
 <div class="container-fluid">
     <header class="header-title">
-        <h1>Informações de Solicitação</h1>
+        <h1>Informaï¿½ï¿½es de Solicitaï¿½ï¿½o</h1>
         <ol class="breadcrumb">
-            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">Início</a></li>
+            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">Inï¿½cio</a></li>
             <li><a href="index.php?lda_consulta">Consulta</a></li>
-            <li class="active">Solicitação</li>
+            <li class="active">Solicitaï¿½ï¿½o</li>
         </ol>
     </header>
 </div>
@@ -91,7 +82,7 @@
 
     function executaOperacao(acao)
     {
-        if(confirm("Confirma operação?"))
+        if(confirm("Confirma operaï¿½ï¿½o?"))
         {
             document.getElementById("acao").value = acao;
             document.getElementById("formulario").submit();
@@ -143,12 +134,12 @@
             <td align="left" valign="top">
                 <b>Solicita&ccedil;&atilde;o Recebida em</b>
                 <br>
-                <?php echo !empty($datarecebimentosolicitacao)?$datarecebimentosolicitacao." por ".$usuariorecebimento:"Não Recebido";?>
+                <?php echo !empty($datarecebimentosolicitacao)?$datarecebimentosolicitacao." por ".$usuariorecebimento:"Nï¿½o Recebido";?>
             </td>
             <td align="left" valign="top">
                 <b>Porroga&ccedil;&atilde;o</b>
                 <br>
-                <?php echo !empty($dataprorrogacao)?"Prorrogado em: ".$dataprorrogacao." por ".$usuarioprorrogacao. "<brMotivo: ".$motivoprorrogacao:"Não Prorrogado";?>
+                <?php echo !empty($dataprorrogacao)?"Prorrogado em: ".$dataprorrogacao." por ".$usuarioprorrogacao. "<brMotivo: ".$motivoprorrogacao:"Nï¿½o Prorrogado";?>
             </td>
         </tr>
         <tr id="lnDemanda3">
@@ -272,7 +263,7 @@
                 </table>
             </td>
         </tr>
-        <?php if($instancia == "I") { //se for solicitação inicial, mostra os recursos se houver
+        <?php if($instancia == "I") { //se for solicitaï¿½ï¿½o inicial, mostra os recursos se houver
                 
                     $rsRec = Solicitacao::getRecursos($idsolicitacao);
                     if(mysqli_num_rows($rsRec) > 0)

@@ -1,6 +1,5 @@
 <?php
-
-  //tipo de arquivos
+  //tipo de arquivos1
   $tiposPermitidos= array('application/pdf', 'image/jpeg' );
  
   // O nome original do arquivo no computador do usuario
@@ -57,7 +56,7 @@ function enviadados(){
 		//pega ida da ultima solicitacao possivelmente a que esta sendo realizada
 		$sql = execQuery("SELECT * FROM `lda_solicitacao` ORDER BY `idsolicitacao` DESC LIMIT 1 ");
 		$row = mysqli_fetch_array($sql);
-		$idsolicitacao = $row['idsolicitacao']; //ida da solicitação para nome do arquivo
+		$idsolicitacao = $row['idsolicitacao']; //ida da solicitaï¿½ï¿½o para nome do arquivo
 		$iduser = getSession("uid");       //sessao do solicitante 
 		
 		//seleciona id do anexo
@@ -67,7 +66,7 @@ function enviadados(){
 				
 		//###################################
 		//$pasta = './000/';
-		// Pega a extensão do arquivo enviado
+		// Pega a extensï¿½o do arquivo enviado
 		$extensao = strtolower(end(explode('.', $arqName)));
 				  
 		// Define o novo nome do arquivo usando um UNIX TIMESTAMP

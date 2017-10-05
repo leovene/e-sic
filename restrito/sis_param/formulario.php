@@ -1,14 +1,5 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
-//retorna erro de uma ação se houver (em alert do javascript) 
+//retorna erro de uma aï¿½ï¿½o se houver (em alert do javascript)
 getErro($erro);
 
 ?>

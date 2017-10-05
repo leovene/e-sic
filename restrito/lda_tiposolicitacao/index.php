@@ -1,13 +1,4 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
 include "manutencao.php";
 include "../inc/topo.php";
 include "../inc/paginacaoIni.php";	
@@ -33,8 +24,8 @@ $rs = execQueryPag($sql);
 	<h1>Cadastro de Inst&acirc;ncias</h1>
 	<ol class="breadcrumb">
             <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">Dashboard</a></li>
-            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?lda_configuracao">Administração</a></li>
-            <li class="active">Cadastro de Instâncias</li>
+            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?lda_configuracao">Administraï¿½ï¿½o</a></li>
+            <li class="active">Cadastro de Instï¿½ncias</li>
 	</header>
 <br>
 <!-- FORMULARIO -->
@@ -90,7 +81,7 @@ Observa&ccedil;&otilde;es:
                         <select name="proximainsntancia" id="proximainstancia" onchange="ordena(<?php echo $registro['idtiposolicitacao'];?>,this.value)">
                             <option value="-1">Nenhum</option>
                             <?php 
-                                //seleciona as instancias que não seja de inicio e que não esteja sendo utilizada por outro tipo de solicitação
+                                //seleciona as instancias que nï¿½o seja de inicio e que nï¿½o esteja sendo utilizada por outro tipo de solicitaï¿½ï¿½o
                                 $qry = "select * from lda_tiposolicitacao t
                                         where instancia != 'I' 
                                               and idtiposolicitacao != ".$registro['idtiposolicitacao']."

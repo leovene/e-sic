@@ -2,7 +2,6 @@
     <div class="scrollbar-inner">
         <header>
             <!--img class="img-responsive" src="../assets/dist/images/logo2.png" alt="E-SIC LIVRE "-->
-            
 			<div class="media text-center">
                 <!--figure-->
                     <img src="../assets/dist/images/user-default.png"  width="160" alt="<?= getSession("apelidousuario"); ?>">
@@ -15,7 +14,7 @@
 							location.href='../index/?sic='+sic;
 						}       
 					</script>
-					<select id="idsecretaria" name="idsecretaria" class="selectpicker" onChange="if (confirm('ATENÇÃO: Esta operação cancelarÁ os trabalhos atuais em aberto.\nConfirma troca de SIC?')){trocaSic(this.value);}">
+					<select id="idsecretaria" name="idsecretaria" class="selectpicker" onChange="if (confirm('ATENï¿½ï¿½O: Esta operaï¿½ï¿½o cancelarï¿½ os trabalhos atuais em aberto.\nConfirma troca de SIC?')){trocaSic(this.value);}">
 					
 					<?php
                                                                         $sql = "SELECT siglasecretaria, idsecretaria FROM vw_secretariausuario

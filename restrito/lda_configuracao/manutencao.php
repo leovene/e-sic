@@ -1,17 +1,8 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
 	include_once("../inc/autenticar.php");
 	checkPerm("LSTLDACONF");
 	
-	//função de validação dos dados do formulario do cadastro de usuario -------------------
+	//funï¿½ï¿½o de validaï¿½ï¿½o dos dados do formulario do cadastro de usuario -------------------
 	function validaDados()
 	{
 		global $erro;
@@ -47,7 +38,7 @@
 	//------------------------------------------------------------------------------------------
 	$erro	= "";
 	
-	//se tiver sido postado informação do formulario
+	//se tiver sido postado informaï¿½ï¿½o do formulario
 	if ($_POST['acao'])
 	{
 	
@@ -63,7 +54,7 @@
 		$nomeremetenteemail         = $_POST["nomeremetenteemail"];
 		$emailremetente             = $_POST["emailremetente"];		
 		
-		//verifica ação do usuario
+		//verifica aï¿½ï¿½o do usuario
 		if ($acao == "Salvar")
                 {
                         checkPerm("UPTLDACONF");
@@ -84,12 +75,12 @@
 
                                 if (execQuery($sql))
                                 {
-                                        logger("Alterado configuração do lei de acesso.");
-                                        echo "<script>alert('Configuração atualizada com sucesso!');</script>";
+                                        logger("Alterado configuraï¿½ï¿½o do lei de acesso.");
+                                        echo "<script>alert('Configuraï¿½ï¿½o atualizada com sucesso!');</script>";
                                 }
                                 else
                                 {
-                                        $erro = "Ocorreu um erro ao atualizar configuração.";
+                                        $erro = "Ocorreu um erro ao atualizar configuraï¿½ï¿½o.";
                                 }
                         }
                                 

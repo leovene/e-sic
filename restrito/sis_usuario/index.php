@@ -1,14 +1,5 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
-include("../inc/autenticar.php");  
+include("../inc/autenticar.php");
 checkPerm("LSTUSR");
 
 include("../inc/paginacaoPorPostIni.php");
@@ -50,11 +41,11 @@ $rs = execQueryPag($sql);
 
 <div class="container-fluid">
     <header class="header-title">
-        <h1>Cadastro de Usuários</h1>
+        <h1>Cadastro de Usuï¿½rios</h1>
         <ol class="breadcrumb">
-            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">Início</a></li>
-            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?lda_configuracao">Administração</a></li>
-            <li class="active">Cadastro de Usuários</li>
+            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">Inï¿½cio</a></li>
+            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?lda_configuracao">Administraï¿½ï¿½o</a></li>
+            <li class="active">Cadastro de Usuï¿½rios</li>
         </ol>
     </header>
 </div>
@@ -88,7 +79,7 @@ $rs = execQueryPag($sql);
 				<div class="col-md-2 col-xs-12">
 					<div class="form-group">
 						<label for="matricula" class="input-label"><i class="material-icons">account_circle</i></label>
-						<input type="text" placeholder="Matrícula" name="matricula" id="matricula" class="form-control icon" value="<?php echo $matricula?>"  maxlength="6" />
+						<input type="text" placeholder="Matrï¿½cula" name="matricula" id="matricula" class="form-control icon" value="<?php echo $matricula?>"  maxlength="6" />
 					</div>
 				</div>
 				<div class="col-md-2 col-xs-12">
@@ -117,7 +108,7 @@ $rs = execQueryPag($sql);
 					<tr>
 						<th></th>
 						<th>Codigo</th>
-						<th>Usuário</th>
+						<th>Usuï¿½rio</th>
 						<th>CPF</th>
 						<th>Matricula</th>
 						<th>Login</th>

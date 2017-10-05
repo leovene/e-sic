@@ -1,13 +1,4 @@
 <?php 
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
 //PAGINACAO - PARTE INICIAL
 	
 	$total="";
@@ -32,7 +23,7 @@
 		
 	}
 	
-	// Declaração da pagina inicial  
+	// Declaraï¿½ï¿½o da pagina inicial  
 	$pagina = $_POST["pagina"];  
 	if($pagina == "") 
 	{  
@@ -55,7 +46,7 @@
 
 	$resultado = execQueryPag($sql);
 	
-	//inclui o arquivo paginacaoFim.php onde serao exibidos os controles da paginação, tem q ser abaixo da inclusao desse e depois da consulta
+	//inclui o arquivo paginacaoFim.php onde serao exibidos os controles da paginaï¿½ï¿½o, tem q ser abaixo da inclusao desse e depois da consulta
 
 */
 	

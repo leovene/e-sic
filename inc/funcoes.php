@@ -1,14 +1,5 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
-function isEmail($eMailAddress) 
+function isEmail($eMailAddress)
 {
 	if (filter_var($eMailAddress, FILTER_VALIDATE_EMAIL))
 		return true;
@@ -133,14 +124,14 @@ function niverToBd($niver)
 	return $niver;
 }
 
-//Converte para maiúsculas o primeiro caractere de cada palavra fora os artigos listados abaixo.
+//Converte para maiï¿½sculas o primeiro caractere de cada palavra fora os artigos listados abaixo.
 function ucwords2 ($cadeia){ 
     $cadeia = ucwords(strtolower($cadeia)); 
     $min = array(0=>" a ", 1=>" e ", 2=>" o ", 3=>" da ", 4=>" de ", 5=>" do ", 6=>" das ", 7=>" dos ", 
-                 8=>" ao ", 9=>" aos ", 10=>" às ", 11=>" é ", 12=>" à ", 13=>" em ", 14=> " no ",
+                 8=>" ao ", 9=>" aos ", 10=>" ï¿½s ", 11=>" ï¿½ ", 12=>" ï¿½ ", 13=>" em ", 14=> " no ",
                  ); 
     $mai = array(0=>" A ", 1=>" E ", 2=>" O ", 3=>" Da ", 4=>" De ", 5=>" Do ", 6=>" Das ", 7=>" Dos ", 
-                 8=>" Ao ", 9=>" Aos ", 10=>" Às ", 11=>" É ", 12=>" À ", 13=>" Em ", 14=> " No ", 
+                 8=>" Ao ", 9=>" Aos ", 10=>" ï¿½s ", 11=>" ï¿½ ", 12=>" ï¿½ ", 13=>" Em ", 14=> " No ", 
                  ); 
                  
                  
@@ -221,7 +212,7 @@ function smarty_function_data($params, &$smarty)
 }
 
 
-//retorna o valor da variavel de sessão
+//retorna o valor da variavel de sessï¿½o
 function getSession($campo)
 {
 	$sessionlist = $_SESSION[SISTEMA_CODIGO];

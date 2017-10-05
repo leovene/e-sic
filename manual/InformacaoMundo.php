@@ -1,12 +1,4 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
  include("../inc/topo.php"); ?>
 <div id="migalha_de_Pao">Voc&ecirc; est&aacute; em:<a href="../index.php"> Principal</a> -> Acesso &agrave; Informa&ccedil;&atilde;o no Mundo</div>
 <table border="0" cellpadding="0" cellspacing="0" width="986" align="center">

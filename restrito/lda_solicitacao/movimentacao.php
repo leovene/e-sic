@@ -1,13 +1,4 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informação baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal do Natal
- 
- Este programa é software livre; você pode redistribuí-lo e/ou
- modificá-lo sob os termos da Licença GPL2.
-***********************************************************************************/
-
 include("manutencao.php");
 $urlArquivo=getURL("lda");
  
@@ -18,11 +9,11 @@ $urlArquivo=getURL("lda");
 <script src="../js/functions.js"></script>
 <div class="container-fluid">
     <header class="header-title">
-        <h1>Movimentação da Solicitação</h1>
+        <h1>Movimentaï¿½ï¿½o da Solicitaï¿½ï¿½o</h1>
         <ol class="breadcrumb">
-            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">Início</a></li>
-            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?lda_solicitacao">Solicitação</a></li>
-            <li class="active">Movimentação da Solicitação</li>
+            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">Inï¿½cio</a></li>
+            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?lda_solicitacao">Solicitaï¿½ï¿½o</a></li>
+            <li class="active">Movimentaï¿½ï¿½o da Solicitaï¿½ï¿½o</li>
         </ol>
     </header>
 </div>
@@ -57,9 +48,9 @@ $urlArquivo=getURL("lda");
         document.getElementById('lnProrrogar1').style.display = 'none';
         document.getElementById('lnProrrogar2').style.display = 'none';
 
-        //exibe botão de reabrir se:  
+        //exibe botï¿½o de reabrir se:  
         <?php if(checkPerm("LDAPRORROGAR",false)  //tiver permissao de prorrogar 
-                 and $situacao != "N" and $situacao != "R"    //situação for "finalizado"
+                 and $situacao != "N" and $situacao != "R"    //situaï¿½ï¿½o for "finalizado"
                  and empty($dataprorrogacao))  { ?>
              document.getElementById('btnProrrogacao').style.display = 'none';
              document.getElementById('btnProrrogar').style.display = 'none';
@@ -133,7 +124,7 @@ $urlArquivo=getURL("lda");
 
     function executaOperacao(acao, id)
     {
-        if(confirm("Confirma operação?"))
+        if(confirm("Confirma operaï¿½ï¿½o?"))
         {
             document.getElementById(id).disabled = true;
             document.getElementById("acao").value = acao;
@@ -190,9 +181,9 @@ $urlArquivo=getURL("lda");
              document.getElementById('btnFinalizar').style.display = 'none';
         <?php }?>            
 
-        //exibe botão de reabrir se:  
+        //exibe botï¿½o de reabrir se:  
         <?php if(checkPerm("LDAPRORROGAR",false)  //tiver permissao de prorrogar 
-                 and $situacao != "N" and $situacao != "R"    //situação for "finalizado"
+                 and $situacao != "N" and $situacao != "R"    //situaï¿½ï¿½o for "finalizado"
                  and empty($dataprorrogacao)) { ?>
              document.getElementById('btnProrrogar').style.display = 'none';
              document.getElementById('btnProrrogacao').style.display = '';
@@ -294,12 +285,12 @@ $urlArquivo=getURL("lda");
             <td align="left" valign="top">
                 <b>Solicita&ccedil;&atilde;o Recebida em</b>
                 <br>
-                <?php echo !empty($datarecebimentosolicitacao)?$datarecebimentosolicitacao." por ".$usuariorecebimento:"Não Recebido";?>
+                <?php echo !empty($datarecebimentosolicitacao)?$datarecebimentosolicitacao." por ".$usuariorecebimento:"Nï¿½o Recebido";?>
             </td>
             <td align="left" valign="top">
                 <b>Porroga&ccedil;&atilde;o</b>
                 <br>
-                <?php echo !empty($dataprorrogacao)?"Prorrogado em: ".$dataprorrogacao." por ".$usuarioprorrogacao. "<br>Motivo: ".$motivoprorrogacao:"Não Prorrogado";?>
+                <?php echo !empty($dataprorrogacao)?"Prorrogado em: ".$dataprorrogacao." por ".$usuarioprorrogacao. "<br>Motivo: ".$motivoprorrogacao:"Nï¿½o Prorrogado";?>
             </td>
         </tr>
         <tr id="lnDemanda3">
@@ -423,7 +414,7 @@ $urlArquivo=getURL("lda");
                 </table>
             </td>
         </tr>
-        <?php if($instancia == "I") { //se for solicitação inicial, mostra os recursos se houver
+        <?php if($instancia == "I") { //se for solicitaï¿½ï¿½o inicial, mostra os recursos se houver
                 
                     $rsRec = Solicitacao::getRecursos($idsolicitacao);
                     if(mysqli_num_rows($rsRec) > 0)
@@ -624,7 +615,7 @@ $urlArquivo=getURL("lda");
                 <td colspan="4">
                     <br>
                     <?php 
-                        //se tiver permissao de movimentar a demanda, e ela não tiver finalizada ([N]egado ou [R]espondido), exibe botão de envio
+                        //se tiver permissao de movimentar a demanda, e ela nï¿½o tiver finalizada ([N]egado ou [R]espondido), exibe botï¿½o de envio
                         if(checkPerm("LDAMOVIMENTAR",false) and $situacao != "N" and $situacao != "R") 
                         { 
                             ?>
@@ -632,9 +623,9 @@ $urlArquivo=getURL("lda");
                     <button type="button" value="Enviar" class="btn waves-effect btn-success" name="enviar" id="btnEnviar" onclick="executaOperacao(this.value, this.id);" style="display: none" >Enviar</button>
                     <?php 
                         } 
-                        //exibe botão de responder se:  
+                        //exibe botï¿½o de responder se:  
                         if(checkPerm("LDARESPONDER",false)  //tiver permissao de responder a demanda
-                           and $situacao != "N" and $situacao != "R"//situação nao for finalizada ([N]egado ou [R]espondido)
+                           and $situacao != "N" and $situacao != "R"//situaï¿½ï¿½o nao for finalizada ([N]egado ou [R]espondido)
                             ) 
                         { 
                             ?>
@@ -643,13 +634,13 @@ $urlArquivo=getURL("lda");
                     <?php 
                         } 
                             
-                        //exibe botão de reabrir se:  
+                        //exibe botï¿½o de reabrir se:  
                         if(checkPerm("LDAPRORROGAR",false)  //tiver permissao de prorrogar 
-                            and $situacao != "N" and $situacao != "R"    //situação for "finalizado"
+                            and $situacao != "N" and $situacao != "R"    //situaï¿½ï¿½o for "finalizado"
                             and empty($dataprorrogacao))
                         { 
                             ?>
-                    <button type="button" value="Prorrogacao" class="btn waves-effect btn-info" name="prorrogacao" id="btnProrrogacao" onclick="preparaProrrogacao();" >Prorrogarção</button>
+                    <button type="button" value="Prorrogacao" class="btn waves-effect btn-info" name="prorrogacao" id="btnProrrogacao" onclick="preparaProrrogacao();" >Prorrogarï¿½ï¿½o</button>
                     <button type="button" value="Prorrogar" class="btn waves-effect btn-info" name="prorrogar" id="btnProrrogar" onclick="executaOperacao(this.value, this.id);" style="display: none" >Prorrogar</button>
                     <?php 
                         } 
