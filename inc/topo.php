@@ -54,15 +54,15 @@ include("config.php");
 					<div id="faixa">
 						<ul>
 							<img id="home" src="../css/img/home.png" alt="Imagem E-sic Livre"/>
-							<li class="opcao"><a target="_blank" href="http://portal.natal.rn.gov.br/">Principal</a></li>
+							<li class="opcao"><a target="_blank" href="http://35.193.180.200/">Principal</a></li>
 							<img src="../css/img/pipe.png" alt="Imagem E-sic Livre" />
-							<li class="opcao"><a target="_blank" href="http://portal.natal.rn.gov.br/ouvidoria/">Ouvidoria</a></li>
+							<li class="opcao"><a target="_blank" href="http://35.193.180.200/ouvidoria/">Ouvidoria</a></li>
 							<img src="../css/img/pipe.png" alt="Imagem E-sic Livre"/>
-							<li class="opcao"><a target="_blank" href="http://www.natal.rn.gov.br/">Secretarias e &Oacute;rg&atilde;os</a></li>
+							<li class="opcao"><a target="_blank" href="http://35.193.180.200/secretarias">Secretarias e &Oacute;rg&atilde;os</a></li>
 							<img src="../css/img/pipe.png" alt="Imagem E-sic Livre" />
-							<li class="opcao"><a href="../faleconosco">Fale conosco</a></li>
+							<li class="opcao"><a href="http://35.193.180.200/fale-conosco">Fale conosco</a></li>
 							<img src="../css/img/pipe.png" alt="Imagem E-sic Livre"/>
-							<li class="opcao"><a target="_blank" href="http://portal.natal.rn.gov.br/transparencia/index/">Portal da Transpar&ecirc;ncia</a></li>
+							<li class="opcao"><a target="_blank" href="http://35.193.180.200/transparencia/">Portal da Transpar&ecirc;ncia</a></li>
 						</ul>
 					</div>
 					
