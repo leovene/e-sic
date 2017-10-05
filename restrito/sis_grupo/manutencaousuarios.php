@@ -16,7 +16,7 @@
             return false;
         }        
         
-	//fun��o de valida��o dos dados do formulario do cadastro de usuario -------------------
+	//função de validação dos dados do formulario do cadastro de usuario -------------------
 	function validaDados()
 	{
 		global $erro;
@@ -31,7 +31,7 @@
 	$acao	= "Salvar";
 	$erro	= "";
 	
-	//se tiver sido postado informa��o do formulario
+	//se tiver sido postado Informação do formulario
 	if ($_POST['acao'])
 	{
 	

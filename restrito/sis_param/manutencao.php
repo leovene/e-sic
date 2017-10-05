@@ -2,7 +2,7 @@
 	include_once("../inc/autenticar.php");
 	checkPerm("LSTPARAM");
 	
-	//fun��o de valida��o dos dados do formulario do cadastro de usuario -------------------
+	//função de validação dos dados do formulario do cadastro de usuario -------------------
 	function validaDados()
 	{
 		global $erro;
@@ -13,28 +13,28 @@
 				
 		if (empty($sistema))
 		{
-			$erro = "SISTEMA n�o informado.";
+			$erro = "SISTEMA não informado.";
 			return false;
 		}
 		else if (empty($diretorioarquivos))
 		{
-			$erro = "Diretorio de Arquivos n�o informado.";
+			$erro = "Diretorio de Arquivos não informado.";
 			return false;
 		}
 		else if (empty($urlarquivos))
 		{
-			$erro = "URL dos Arquivos n�o informado.";
+			$erro = "URL dos Arquivos não informado.";
 			return false;
 		}
 		
-		//verifica se ja existe registro cadastrado com a informa�ao passada ---
+		//verifica se ja existe registro cadastrado com a informação passada ---
 		if ($acao=="Incluir")
 		{
 			$sql = "select * from sis_param where sistema = '$sistema'";
 			
 			if(mysqli_num_rows(execQuery($sql)) > 0)
 			{
-				$erro = "Nome do Sistema j� existe no cadastro.";
+				$erro = "Nome do Sistema já existe no cadastro.";
 				return false;
 			}
 		}
@@ -62,7 +62,7 @@
 	$acao	= "Incluir";
 	$erro	= "";
 	
-	//se tiver sido postado informa��o do formulario
+	//se tiver sido postado Informação do formulario
 	if ($_POST['acao'])
 	{
 		//recupera valores do formulario
@@ -71,7 +71,7 @@
 		$diretorioarquivos = $_POST["diretorioarquivos"];
 		$urlarquivos	   = $_POST["urlarquivos"];
 		
-		//verifica a��o do usuario
+		//verifica ação do usuario
 		switch ($acao)
 		{
 			//se for uma inclusao
@@ -94,7 +94,7 @@
 					}
 				}
 				break;
-			//se for uma altera��o
+			//se for uma alteração
 			case "Alterar":  		
 				checkPerm("UPTPARAM");	
 				

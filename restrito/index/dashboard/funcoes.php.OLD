@@ -315,7 +315,7 @@ function getStatus($status) {
 	if ($status == "A")
 		return "Aberto";
 	else if ($status == "T")
-		return "Tramita��o";
+		return "tramitação";
 	else if ($status == "R")
 		return "Respondido";	
 	else if ($status == "N")
@@ -330,7 +330,7 @@ function getOrigem($status) {
 	else if ($status == 3)
 		return "Eu Inspetor";
 	else
-		return "N�o classificado";
+		return "não classificado";
 }
 
 ?>

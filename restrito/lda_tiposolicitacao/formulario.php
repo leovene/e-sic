@@ -1,8 +1,5 @@
 <?php
-//retorna erro de uma a��o se houver (em alert do javascript)
 getErro($erro);
-
-
 ?>
 <script>
 	function edita(idtiposolicitacao,nome,instancia){

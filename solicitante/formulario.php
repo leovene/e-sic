@@ -12,7 +12,7 @@
 		}
 		else
 		{
-			document.getElementById('lblNome').innerHTML = "Raz�o Social";
+			document.getElementById('lblNome').innerHTML = "Razão Social";
 			document.getElementById('lblCpfcnpj').innerHTML = "CNPJ";
                         document.getElementById('lnEscolaridade').style.display = "none";
                         document.getElementById('lnProfissao').style.display = "none";
@@ -39,7 +39,7 @@
                                 </td>
                         </tr>
 			<tr>
-				<td align="left">*<span id="lblNome"><?php echo ($tipopessoa=="J")?"Raz�o Social":"Nome"; ?></span>:</td>
+				<td align="left">*<span id="lblNome"><?php echo ($tipopessoa=="J")?"Razão Social":"Nome"; ?></span>:</td>
 				<td align="left"><input type="text" name="nome" id="nome" value="<?php echo $nome;?>" size="58" maxlength="100" /> </td>
 			</tr>
 			<tr>
@@ -149,7 +149,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td align="left">N�mero:</td>
+					<td align="left">número:</td>
 					<td align="left">
 						<input type="text" name="numero" id="numero" value="<?php echo $numero;?>" maxlength="10" size="10"  />
 						Complemento:

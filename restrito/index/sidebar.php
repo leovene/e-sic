@@ -14,7 +14,7 @@
 							location.href='../index/?sic='+sic;
 						}       
 					</script>
-					<select id="idsecretaria" name="idsecretaria" class="selectpicker" onChange="if (confirm('ATEN��O: Esta opera��o cancelar� os trabalhos atuais em aberto.\nConfirma troca de SIC?')){trocaSic(this.value);}">
+					<select id="idsecretaria" name="idsecretaria" class="selectpicker" onChange="if (confirm('ATENÇÃO: Esta operação cancelará os trabalhos atuais em aberto.\nConfirma troca de SIC?')){trocaSic(this.value);}">
 					
 					<?php
                                                                         $sql = "SELECT siglasecretaria, idsecretaria FROM vw_secretariausuario

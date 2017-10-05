@@ -24,8 +24,8 @@ $rs = execQueryPag($sql);
 	<h1>Cadastro de Inst&acirc;ncias</h1>
 	<ol class="breadcrumb">
             <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">Dashboard</a></li>
-            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?lda_configuracao">Administra��o</a></li>
-            <li class="active">Cadastro de Inst�ncias</li>
+            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?lda_configuracao">Administração</a></li>
+            <li class="active">Cadastro de Instâncias</li>
 	</header>
 <br>
 <!-- FORMULARIO -->
@@ -81,7 +81,6 @@ Observa&ccedil;&otilde;es:
                         <select name="proximainsntancia" id="proximainstancia" onchange="ordena(<?php echo $registro['idtiposolicitacao'];?>,this.value)">
                             <option value="-1">Nenhum</option>
                             <?php 
-                                //seleciona as instancias que n�o seja de inicio e que n�o esteja sendo utilizada por outro tipo de solicita��o
                                 $qry = "select * from lda_tiposolicitacao t
                                         where instancia != 'I' 
                                               and idtiposolicitacao != ".$registro['idtiposolicitacao']."

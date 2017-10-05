@@ -12,7 +12,7 @@
   }
   else
   {
-	logger("PARAMETRO Exclu�do com Sucesso.");
+	logger("PARAMETRO Ecluído com Sucesso.");
   }
 
   echo "<script>document.location='index.php';</script>";

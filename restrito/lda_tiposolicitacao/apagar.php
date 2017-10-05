@@ -8,11 +8,11 @@
 
   if(!execQuery($sql))
   {
-    echo "<script>alert('N�o foi possivel excluir este tipo de solicita��o. Esse registro pode estar em uso.');</script>";
+    echo "<script>alert('Não foi possivel excluir este tipo de solicitação. Esse registro pode estar em uso.');</script>";
   }
   else
   {
-	logger("Tipo de solicita��o exclu�do com sucesso.");
+	logger("Tipo de solicitação excluído com sucesso.");
   }
 
   echo "<script>document.location='?lda_tiposolicitacao';</script>";

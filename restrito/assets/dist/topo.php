@@ -1,13 +1,4 @@
 <?php
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informa��o baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal de Piracaia
- 
- Este programa � software livre; voc� pode redistribu�-lo e/ou
- modific�-lo sob os termos da Licen�a GPL2.
-***********************************************************************************/
-
 //	include ('config.php');
 ?>
 <!DOCTYPE html>
@@ -41,12 +32,12 @@
 		<![endif]-->
 	
 
-		<meta name="E-Sic Livre" content="Portal da Prefeitura Municipal de Piracaia - SEMPLA - Secretaria de Planejamento, Or�amento e Finan�as" />
+		<meta name="E-Sic Livre" content="Portal da Prefeitura Municipal de Piracaia" />
 		<meta http-equiv="pragma" content="no-cache" />
 		<meta name="revisit-after" content="1" />
 		<meta name="classification" content="Internet" />	
-		<meta name="description" content="Portal da Prefeitura Municipal de Piracaia - SEMPLA - Secretaria de Planejamento, Or�amento e Finan�as" />
-		<meta name="keywords" content="Prefeitura de Piracaia, natal, rn, sempla, natal, rn, noticias, servi�os" />
+		<meta name="description" content="Portal da Prefeitura Municipal de Piracaia" />
+		<meta name="keywords" content="Prefeitura de Piracaia" />
 		<meta name="robots" content="ALL" />
 		<meta name="distribution" content="Global" />
 		<meta name="rating" content="General" />

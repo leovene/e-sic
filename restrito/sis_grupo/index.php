@@ -23,7 +23,7 @@ $rs = execQueryPag($sql);
 <h1>Perfis</h1>
 <ol class="breadcrumb">
             <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">Dashboard</a></li>
-            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?lda_configuracao">Administra��o</a></li>
+            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?lda_configuracao">Administração</a></li>
             <li class="active">Perfis</li>
         </ol>
     </header>

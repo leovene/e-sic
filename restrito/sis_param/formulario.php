@@ -1,5 +1,5 @@
 <?php
-//retorna erro de uma a��o se houver (em alert do javascript)
+//retorna erro de uma ação se houver (em alert do javascript)
 getErro($erro);
 
 ?>

@@ -13,12 +13,11 @@ $solicitante    = $_REQUEST["fltsolicitante"];
 $situacao       = $_REQUEST["fltsituacao"];
 $idSecretariaUsuario = getSession('idsecretaria');
 
-$parametrosIndex = "fltnumprotocolo=$numprotocolo&fltsolicitante=$solicitante&fltsituacao=$situacao"; //parametros a ser passado para a pagina de detalhamento, fazendo com que ao voltar para o index traga as informa��es passadas anteriormente
+$parametrosIndex = "fltnumprotocolo=$numprotocolo&fltsolicitante=$solicitante&fltsituacao=$situacao"; //parametros a ser passado para a pagina de detalhamento, fazendo com que ao voltar para o index traga as Informações passadas anteriormente
 
 if (!empty($numprotocolo)) $filtro.= " and concat(sol.numprotocolo,'/',sol.anoprotocolo) = '$numprotocolo'";
 if (!empty($solicitante)) $filtro.= " and pes.nome like '%$solicitante%'";
 
-//verifica se a secretaria do usuario � um SIC central
 $sql="select sigla from sis_secretaria where siccentral = 1 and idsecretaria = '$idSecretariaUsuario'";
 $rs=  execQuery($sql);
 $visibilidadeSICcentral = mysqli_num_rows($rs)>0;
@@ -28,18 +27,18 @@ if($visibilidadeSICcentral)
     $filtro.= " and ifnull(secDestino.idsecretaria,'$idSecretariaUsuario') = '$idSecretariaUsuario' ";
 else
 {
-    //caso exista SIC centralizador, s� mostra as solicita��es do SIC do usuario
+    //caso exista SIC centralizador, Só mostra as solicitações do SIC do usuario
     if(Solicitacao::existeSicCentralizador())
-        $filtro.= " and secDestino.idsecretaria = '$idSecretariaUsuario'"; //filtra so as que a ultima movimenta��o tem como destino a secretaria do usuario
+        $filtro.= " and secDestino.idsecretaria = '$idSecretariaUsuario'"; //filtra so as que a ultima movimentação tem como destino a secretaria do usuario
     else
-        $filtro.= " and (secDestino.idsecretaria = '$idSecretariaUsuario' or (sol.idsecretariaselecionada = '$idSecretariaUsuario' and sol.situacao = 'A'))"; //filtra so as que a ultima movimenta��o tem como destino a secretaria do usuario ou que a secretaria selecionada tenha sido a do usuario e o status esteja em aberto
+        $filtro.= " and (secDestino.idsecretaria = '$idSecretariaUsuario' or (sol.idsecretariaselecionada = '$idSecretariaUsuario' and sol.situacao = 'A'))"; //filtra so as que a ultima movimentação tem como destino a secretaria do usuario ou que a secretaria selecionada tenha sido a do usuario e o status esteja em aberto
 }
 
 
 
-//seleciona as solicita��es n�o respondidas e sua ultima movimenta��o (recupera variaveis de configuracao de prazos)
+//seleciona as solicitações não respondidas e sua ultima movimentação (recupera variaveis de configuracao de prazos)
 /*
- * Quando a situa��o for A ou T, trata da primeira tramita��o do processo. 
+ * Quando a situação for A ou T, trata da primeira tramitação do processo.
  */
 $sql = "select sol.*, 
                pes.nome as solicitante,
@@ -132,35 +131,35 @@ $rs = execQueryPag($sql);
             //se tiver passado do prazo de resposta
             if ($registro['prazorestante'] < 0)
             {
-                $corLinha = "#FFB2B2"; //vermelho - Urgente! Passou do prazo de resolu��o
+                $corLinha = "#FFB2B2"; //vermelho - Urgente! Passou do prazo de resolução
             }
             //se faltar entre 1 e 5 dias para expirar o prazo de resposta
             elseif($registro['prazorestante'] >= 0 and $registro['prazorestante'] <= 5)
             {
-                $corLinha = "#FFFACD"; //amarelo - Alerta! Est� perto de expirar
+                $corLinha = "#FFFACD"; //amarelo - Alerta! está perto de expirar
             }
 
             $confirmacao="";
-            //se existir movimenta��o que n�o tenha sido recebida e o usuario for da secretaria de recebimento, ou a solicitita��o n�o tenha sido recebida nenhuma vez e o usu�rio tiver visibilidade de SIC central
-            //solicita confirma��o de recebimento
+            //se existir movimentação que não tenha sido recebida e o usuario for da secretaria de recebimento, ou a solicitação não tenha sido recebida nenhuma vez e o Usuário tiver visibilidade de SIC central
+            //solicita confirmação de recebimento
             if((!empty($registro['idmovimentacao']) 
                 and empty($registro['datarecebimento']) 
                 and $registro['idsecretariadestino'] == $idSecretariaUsuario)
                or (empty($registro['datarecebimentosolicitacao']) 
                    and $visibilidadeSICcentral))
-                $confirmacao = "if(!confirm('Confirma recebimento da solicita��o?'))return false; ";
+                $confirmacao = "if(!confirm('Confirma recebimento da solicitação?'))return false; ";
             
                 $clickMovimento = $confirmacao."editar('".$registro["idsolicitacao"]."&receber=sim&$parametrosIndex','movimentacao');";
             ?>
             <tr onMouseOver="this.style.backgroundColor = getCorSelecao(true);" onMouseOut="this.style.backgroundColor = '<?php echo $corLinha;?>';" style="background-color:<?php echo $corLinha;?>;cursor:pointer; cursor:hand; ">
                 <td onClick="<?php echo $clickMovimento; ?>">
                     <?php
-                        //se tiver movimenta��o
+                        //se tiver movimentação
                         if (!empty($registro["idmovimentacao"]))
                             //seta que foi recebido se a data de recebimento tiver preenchida
                             $recebido = !empty($registro["datarecebimento"]);
                         else
-                            //seta que foi recebido se a data de recebimento da solicita��o (primeiro recebimento) tiver preenchida
+                            //seta que foi recebido se a data de recebimento da solicitação (primeiro recebimento) tiver preenchida
                             $recebido = !empty($registro["datarecebimentosolicitacao"]);
                     
                         if($recebido)
@@ -170,7 +169,7 @@ $rs = execQueryPag($sql);
                         }
                         else
                         {
-                            $imgTitulo = "N�o Recebido";
+                            $imgTitulo = "não Recebido";
                             $imagem = "mail_closed.png";
                         }
                     ?>
@@ -185,7 +184,7 @@ $rs = execQueryPag($sql);
                 <td onClick="<?php echo $clickMovimento; ?>"><?php echo strtoupper($registro["secretariadestino"]); ?></td>
                 <td onClick="<?php echo $clickMovimento; ?>"><?php echo $registro["prazorestante"]; ?></td>
                 <td onClick="<?php echo $clickMovimento; ?>"><?php echo bdToDate($registro["dataprevisaoresposta"]); ?></td>
-                <td onClick="<?php echo $clickMovimento; ?>"><?php echo (!empty($registro["dataprorrogacao"]))?"Sim":"N�o"; ?></td>
+                <td onClick="<?php echo $clickMovimento; ?>"><?php echo (!empty($registro["dataprorrogacao"]))?"Sim":"não"; ?></td>
                 <td onClick="<?php echo $clickMovimento; ?>"><?php echo Solicitacao::getDescricaoSituacao($registro["situacao"]); ?></td>
             </tr>
             <?php 

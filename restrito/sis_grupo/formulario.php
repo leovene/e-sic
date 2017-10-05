@@ -1,6 +1,6 @@
 <?php
 
-//retorna erro de uma a��o se houver (em alert do javascript) 
+//retorna erro de uma ação se houver (em alert do javascript)
 getErro($erro);
 
 ?>
@@ -40,7 +40,7 @@ getErro($erro);
 			<div class="col-md-2 col-xs-12">
 				<div class="form-group">
 					<label for="descricao" class="input-label"><i class="material-icons">account_circle</i></label>
-					<input type="text" class="form-control icon" name="descricao" value="<?php echo $descricao;?>" maxlength="70" size="50" id="descricao" placeholder="Descri��o"/>
+					<input type="text" class="form-control icon" name="descricao" value="<?php echo $descricao;?>" maxlength="70" size="50" id="descricao" placeholder="descrição"/>
 				</div>
 			</div>	
 			  

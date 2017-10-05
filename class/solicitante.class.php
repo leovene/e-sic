@@ -274,7 +274,7 @@ class Solicitante {
 						
 		if (empty($this->tipopessoa))
 		{
-			$this->erro = "Tipo de Pessoa n�o informado.";
+			$this->erro = "Tipo de Pessoa não informado.";
 			return false;
 		}
 		
@@ -282,17 +282,17 @@ class Solicitante {
 		{
                         if (empty($this->nome))
                         {
-                                $this->erro = "Nome n�o informado.";
+                                $this->erro = "Nome não informado.";
                                 return false;
                         }
 			elseif (empty($this->cpfcnpj))
 			{
-				$this->erro = "CPF n�o informado.";
+				$this->erro = "CPF não informado.";
 				return false;
 			}
 			elseif (!isCpf($this->cpfcnpj))
 			{
-				$this->erro = "CPF inv�lido.";
+				$this->erro = "CPF inválido.";
 				return false;
 			}
 		}
@@ -300,93 +300,93 @@ class Solicitante {
 		{
                         if (empty($this->nome))
                         {
-                                $this->erro = "Nome n�o informado.";
+                                $this->erro = "Nome não informado.";
                                 return false;
                         }
 			if (empty($this->cpfcnpj))
 			{
-				$this->erro = "CNPJ n�o informado.";
+				$this->erro = "CNPJ não informado.";
 				return false;
 			}
 			elseif (!isCnpj($this->cpfcnpj))
 			{
-				$this->erro = "CNPJ inv�lido.";
+				$this->erro = "CNPJ inválido.";
 				return false;
 			}
 		}
 		
 		if (empty($this->email))
 		{
-			$this->erro = "E-mail n�o informado";
+			$this->erro = "E-mail não informado";
 			return false;
 		}
 		elseif (!isEmail($this->email))
 		{
-			$this->erro = "E-mail inv�lido";
+			$this->erro = "E-mail inválido";
 			return false;
 		}
 		elseif (empty($this->confirmeemail))
 		{
-			$this->erro = "Confirma��o do e-mail n�o informado";
+			$this->erro = "Confirmação do e-mail não informado";
 			return false;
 		}
 		elseif (!isEmail($this->confirmeemail))
 		{
-			$this->erro = "E-mail para confirma��o est� inv�lido";
+			$this->erro = "E-mail para confirmação está inválido";
 			return false;
 		}
 		elseif ($this->confirmeemail != $this->email)
 		{
-			$this->erro = "E-mail n�o confere com a confirma��o";
+			$this->erro = "E-mail não confere com a confirmação";
 			return false;
 		}
 
 		if (empty($this->senha))
 		{
-			$this->erro = "Senha de acesso n�o informada";
+			$this->erro = "Senha de acesso não informada";
 			return false;
 		}
 		elseif (empty($this->confirmasenha))
 		{
-			$this->erro = "Confirma��o da senha n�o informada";
+			$this->erro = "Confirmação da senha não informada";
 			return false;
 		}
 		elseif ($this->confirmasenha != $this->senha)
 		{
-			$this->erro = "Senha n�o confere com a confirma��o";
+			$this->erro = "Senha não confere com a confirmação";
 			return false;
 		}
                 
-		//valida��o de endere�o
+		//validação de endereço
                 /*
 		if (empty($this->cep))
 		{
-			$this->erro = "CEP n�o informado.";
+			$this->erro = "CEP não informado.";
 			return false;
 		}
 		elseif (empty($this->logradouro))
 		{
-			$this->erro = "Logradouro n�o informado";
+			$this->erro = "Logradouro não informado";
 			return false;
 		}
 		elseif (empty($this->bairro))
 		{
-			$this->erro = "Bairro n�o informado";
+			$this->erro = "Bairro não informado";
 			return false;
 		}
 		elseif (empty($this->cidade))
 		{
-			$this->erro = "Cidade n�o informada";
+			$this->erro = "Cidade não informada";
 			return false;
 		}
 		elseif (empty($this->numero))
 		{
-			$this->erro = "Numero n�o informado";
+			$this->erro = "Numero não informado";
 			return false;
 		}
 		elseif (empty($this->uf))
 		{
-			$this->erro = "UF n�o informada";
+			$this->erro = "UF não informada";
 			return false;
 		}
 		*/
@@ -399,7 +399,7 @@ class Solicitante {
 				
 		if(mysqli_num_rows(execQuery($sql)) > 0)
 		{
-			$this->erro = "Cadastro j� realizado.";
+			$this->erro = "Cadastro já realizado.";
 			return false;
 		}
 		//-----------------------------------------------------------------------
@@ -466,13 +466,13 @@ class Solicitante {
 					
 				$body="Prezado(a) $this->nome,<br> <br>
                                         
-                                       Voc� se cadastrou no sistema ".SISTEMA_NOME.". Para confirmar seu cadastro, favor acesse o seguinte endere�o: <br/><br>
+                                       Você se cadastrou no sistema ".SISTEMA_NOME.". Para confirmar seu cadastro, favor acesse o seguinte endereço: <br/><br>
                                        
 									   <a href='".SITELNK."confirmacao/?k=".md5($this->idsolicitante)."'>".SITELNK."confirmacao/?k=".md5($this->idsolicitante)."</a><br><br>
                                             
                                         Mensagem automatica do ".SISTEMA_NOME;
 				
-				if (!sendmail($this->email,'Confirma��o de cadastro no '.SISTEMA_NOME,$body))
+				if (!sendmail($this->email,'Confirmação de cadastro no '.SISTEMA_NOME,$body))
 					$all_query_ok = false;
 				
 
@@ -506,12 +506,12 @@ class Solicitante {
             
                 $body="Prezado(a) ".$row['nome'].",<br> <br>
 
-                        Voc� precisa completar seu cadastro para ter acesso ao sistema ".SISTEMA_NOME.". Para isso, precisamos da sua confirma��o, favor acesse o seguinte endere�o: <br/><br>
+                        Você precisa completar seu cadastro para ter acesso ao sistema ".SISTEMA_NOME.". Para isso, precisamos da sua confirmação, favor acesse o seguinte endereço: <br/><br>
                         ".SITELNK."confirmacao/?k=".md5($this->idsolicitante)."<br><br>
 
                         Mensagem automatica do sistema ".SISTEMA_NOME;
 
-                if (!sendmail($row['email'],'Confirma��o de cadastro no '.SISTEMA_NOME,$body))
+                if (!sendmail($row['email'],'Confirmação de cadastro no '.SISTEMA_NOME,$body))
                         return false;
                 else
                         return true;
@@ -593,8 +593,8 @@ class Solicitante {
 				$body="Prezado(a) $this->nome,<br> <br>
                                         Seu cadastro no ".SISTEMA_NOME." foi confirmado com sucesso. <br>
                                         Link de acesso: ".SITELNK." <br>
-                                        Usu�rio: $this->cpfcnpj<br><br>
-                                        **A senha de acesso � aquela informada no cadastro. Caso n�o se lembre, solicite o envio de uma nova senha pelo link \"Esqueci a senha\" no formul�rio de login do sistema.
+                                        Usuário: $this->cpfcnpj<br><br>
+                                        **A senha de acesso é aquela informada no cadastro. Caso não se lembre, solicite o envio de uma nova senha pelo link \"Esqueci a senha\" no formulário de login do sistema.
                                         ";
 				
 				if (!sendmail($email,'Cadastro realizado com sucesso!',$body))
@@ -612,7 +612,7 @@ class Solicitante {
 			}
 			else
 			{
-				$this->erro = "erro na confirma��o da solicita��o";//.$con->error;			
+				$this->erro = "erro na confirmação da solicitação";//.$con->error;
 				$con->rollback();
 			}
 			
@@ -620,7 +620,7 @@ class Solicitante {
 		}
 		else
 		{
-			$this->erro = "Sua confirma��o de cadastro j� foi realizada.";
+			$this->erro = "Sua confirmação de cadastro já foi realizada.";
 			return false;
 		}
 	}
@@ -658,12 +658,12 @@ class Solicitante {
 				if ($con->query($sql)) 
 				{
 					$body="Caro(a) $nome,<br> <br>
-						   Foi solicitado redefini��o de senha de acesso ao sistema do ".SISTEMA_NOME.". Para acessar o sistema entre no endere�o ".SITELNK." <br>
+						   Foi solicitado redefinição de senha de acesso ao sistema do ".SISTEMA_NOME.". Para acessar o sistema entre no endereço ".SITELNK." <br>
 						   Dados de acesso: <br>
 						   Login: $cpfcnpj<br>
 						   Senha: $chave";
 					
-					if (!sendmail($email,'Redefini��o de Senha',$body))
+					if (!sendmail($email,'Redefinição de Senha',$body))
 					{
 						$this->erro = "Ocorreu um erro no envio do e-mail. Favor tente mais tarde.";
 						$all_query_ok = false;
@@ -671,7 +671,7 @@ class Solicitante {
 				}
 				else
 				{
-					$this->erro = "Ocorreu um erro na redefini��o da senha. Favor tente mais tarde.";
+					$this->erro = "Ocorreu um erro na redefinição da senha. Favor tente mais tarde.";
 					$all_query_ok = false;
 				}
 				
@@ -688,23 +688,23 @@ class Solicitante {
 					return false;
 				}
 			}
-			//caso nao tenha confirmado, reenvia email de confirma��o
+			//caso nao tenha confirmado, reenvia email de confirmação
 			else
 			{
 				$body="Caro(a) $nome,<br> <br>
-					   Para confirma��o do seu cadastro no ".SISTEMA_NOME." efetue os seguintes passos: <br/>
-					     Selecione e Copie o endere�o ao lado : ".SITELNK."confirmacao/?k=".md5($idsolicitante).
-						"Cole-o na barra de endere�os do navegador
+					   Para confirmação do seu cadastro no ".SISTEMA_NOME." efetue os seguintes passos: <br/>
+					     Selecione e Copie o endereço ao lado : ".SITELNK."confirmacao/?k=".md5($idsolicitante).
+						"Cole-o na barra de endereços do navegador
 						 Pressione no teclado a tecla ENTER";
 				
-				if (!sendmail($email,'Solicita��o de confirma��o de cadastro',$body))
+				if (!sendmail($email,'Solicitação de confirmação de cadastro',$body))
 				{
 					$this->erro = "Ocorreu um erro no envio do e-mail. Favor tente mais tarde.";
 					return false;
 				}
 				else
 				{
-					$this->erro = "Caro(a) $nome, estamos aguardando a confirma��o do seu cadastro. Para tanto, reenviamos o pedido de confirma��o para o seu email: $email";
+					$this->erro = "Caro(a) $nome, estamos aguardando a confirmação do seu cadastro. Para tanto, reenviamos o pedido de confirmação para o seu email: $email";
 					return false;
 				}
 			}
@@ -712,7 +712,7 @@ class Solicitante {
 		//caso nao tenha sido cadastrado
 		else
 		{
-			$this->erro = "N�o existe cadastro para o CPF/CNPJ informado.";
+			$this->erro = "Não existe cadastro para o CPF/CNPJ informado.";
 			return false;
 		}
 	}
@@ -740,13 +740,13 @@ class Solicitante {
 			
 			if(md5($senhaatual) != $chave)
 			{
-				$this->erro = "Senha atual est� incorreta.";
+				$this->erro = "Senha atual está incorreta.";
 				return false;
 			}
 			
 			if($novasenha <> $confirmasenha)
 			{
-				$this->erro = "Nova senha n�o confere com a confirma��o";
+				$this->erro = "Nova senha não confere com a confirmação";
 				return false;
 			}
 		}
@@ -762,7 +762,7 @@ class Solicitante {
 		}
 		else
 		{
-			//logger("Alterou senha do Cidad�o");  
+			//logger("Alterou senha do Cidadão");
 			return true;
 		}
 	}	

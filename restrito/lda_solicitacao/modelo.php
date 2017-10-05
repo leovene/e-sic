@@ -76,7 +76,7 @@
 
     function executaOperacao(acao)
     {
-        if(confirm("Confirma opera��o?"))
+        if(confirm("Confirma operação?"))
         {
             document.getElementById("acao").value = acao;
             document.getElementById("formulario").submit();
@@ -121,11 +121,11 @@
                 </td>
                 <td align="left" valign="top">
                     <b>Solicita&ccedil;&atilde;o Recebida em</b> <br>
-                    &nbsp;&nbsp;<?php echo !empty($datarecebimentosolicitacao)?$datarecebimentosolicitacao." por ".$usuariorecebimento:"N�o Recebido";?>
+                    &nbsp;&nbsp;<?php echo !empty($datarecebimentosolicitacao)?$datarecebimentosolicitacao." por ".$usuariorecebimento:"não Recebido";?>
                 </td>
                 <td align="left" valign="top">
                     <b>Porroga&ccedil;&atilde;o</b> <br>
-                    &nbsp;&nbsp;<?php echo !empty($dataprorrogacao)?"Prorrogado em: ".$dataprorrogacao." por ".$usuarioprorrogacao. "<br>&nbsp;&nbsp;Motivo: ".$motivoprorrogacao:"N�o Prorrogado";?>
+                    &nbsp;&nbsp;<?php echo !empty($dataprorrogacao)?"Prorrogado em: ".$dataprorrogacao." por ".$usuarioprorrogacao. "<br>&nbsp;&nbsp;Motivo: ".$motivoprorrogacao:"não Prorrogado";?>
                 </td>
         </tr>
         <tr id="lnDemanda3">
@@ -229,7 +229,7 @@
 			</table>
 		</td>
 	</tr>
-        <?php if($instancia == "I") { //se for solicita��o inicial, mostra os recursos se houver
+        <?php if($instancia == "I") { //se for solicitação inicial, mostra os recursos se houver
             
                 $rsRec = Solicitacao::getRecursos($idsolicitacao);
                 if(mysqli_num_rows($rsRec) > 0)

@@ -29,7 +29,7 @@
             return false;
         }        
         
-	// Fun��o de valida��o dos dados do formul�rio do cadastro de usu�rio ----------
+	// função de validação dos dados do formulário do cadastro de Usuário ----------
 	function validaDados()
 	{
 		global $erro;
@@ -47,32 +47,32 @@
 		
 		if (empty($nome))
 		{
-			$erro = "Nome n�o informado.";
+			$erro = "Nome não informado.";
 			return false;
 		}
 		elseif (empty($login))
 		{
-			$erro = "Login n�o informado.";
+			$erro = "Login não informado.";
 			return false;
 		}
 		elseif (empty($status))
 		{
-			$erro = "Status n�o informado";
+			$erro = "Status não informado";
 			return false;
 		}
 		elseif (empty($idsecretaria))
 		{
-			$erro = "SIC n�o informado";
+			$erro = "SIC não informado";
 			return false;
 		}
 		elseif (empty($cpfusuario) || !isCpf($cpfusuario))
 		{
-			$erro = "CPF Inv�lido.";
+			$erro = "CPF Inválido.";
 			return false;
 		}
                 if (empty($gruposselecionados))
 		{
-			$erro = "Perfil(is) n�o informado(s)";
+			$erro = "Perfil(is) não informado(s)";
 			return false;
 		}
                 if (empty($idusuario) and empty($chave))
@@ -82,7 +82,7 @@
 		}
 
 
-		//verifica se ja existe registro cadastrado com a informa�ao passada ---
+		//verifica se ja existe registro cadastrado com a informação passada ---
 		
 		if ($acao=="Incluir")
 			$sql = "select * from sis_usuario where cpfusuario = '$cpfusuario'";
@@ -91,8 +91,8 @@
 			
 		if(mysqli_num_rows(execQuery($sql)) > 0)
 		{
-			//$erro = "J� existe usuario cadastrado com o login informado";
-			$erro = "J� existe usuario cadastrado com o CPF informados";
+			//$erro = "já existe usuario cadastrado com o login informado";
+			$erro = "já existe usuario cadastrado com o CPF informados";
 			return false;
 		}
 
@@ -103,7 +103,7 @@
 			
 		if(mysqli_num_rows(execQuery($sql)) > 0)
 		{
-			$erro = "J� existe usuario cadastrado com o login informado";
+			$erro = "já existe usuario cadastrado com o login informado";
 			return false;
 		}
 
@@ -114,7 +114,7 @@
 			
 		if(mysqli_num_rows(execQuery($sql)) > 0)
 		{
-			$erro = "J� existe usuario cadastrado com a matricula informada";
+			$erro = "já existe usuario cadastrado com a matricula informada";
 			return false;
 		}
                 
@@ -127,7 +127,7 @@
 	$codigo = $_GET["codigo"];
 	$acao	= "Incluir";
 	
-	//se for passado codigo para edi��o e nao tiver sido postado informa��o do formulario busca dados do banco
+	//se for passado codigo para Edição e nao tiver sido postado Informação do formulario busca dados do banco
 	if(!$_POST['Alterar'] and !empty($codigo))
 	{
 		$acao	= "Alterar";
@@ -268,7 +268,7 @@
 			
 		}
 	}
-	//se for uma altera��o
+	//se for uma alteração
 	elseif ($_POST['Alterar'])
 	{
 		$acao	= "Alterar";	

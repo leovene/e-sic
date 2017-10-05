@@ -13,10 +13,9 @@
 	$fltsituacao       = $_REQUEST["fltsituacao"];
 	$receber           = $_REQUEST["receber"];
 	
-	$parametrosIndex = "fltnumprotocolo=$fltnumprotocolo&fltsolicitante=$fltsolicitante&fltsituacao=$fltsituacao"; //parametros a ser passado para a pagina de detalhamento, fazendo com que ao voltar para o index traga as informa��es passadas anteriormente
+	$parametrosIndex = "fltnumprotocolo=$fltnumprotocolo&fltsolicitante=$fltsolicitante&fltsituacao=$fltsituacao"; //parametros a ser passado para a pagina de detalhamento, fazendo com que ao voltar para o index traga as Informações passadas anteriormente
 	//-----
         
-	//se for passado c�digo para edi��o e nao tiver sido postado informa��o do formulario busca dados do banco
 	if(!$_POST['acao'] and !empty($codigo))
 	{
 		$acao = "Alterar";
@@ -110,12 +109,12 @@
 		$uf                         = $_POST['uf'];
 		$sistemaOrigem				= $_POST['origem'];
 	
-		//campos da movimenta��o
+		//campos da movimentação
 		$idsecretariadestino        = $_POST['idsecretariadestino'];
 		$despacho                   = $_POST['despacho'];
 		$anexomovimentacao          = $_FILES["anexomovimentacao"]; 	
 		
-		//campos da finaliza��o
+		//campos da finalização
 		$txtresposta                = $_POST['txtresposta'];
 		$tiporesposta               = $_POST['tiporesposta'];
 		$arquivos                   = $_FILES["arquivos"]; 	
@@ -127,26 +126,26 @@
 	$erro	= "";
 	$valida = $_GET["tk"];
 	if ($valida <> md5($codigo . SIS_TOKEN)) {
-		//echo "<script>alert('Demanda n�o pertence ao seu SIC - ". getSession("sic")[getSession("idsecretaria")][1] . "')</script>";
+		//echo "<script>alert('Demanda não pertence ao seu SIC - ". getSession("sic")[getSession("idsecretaria")][1] . "')</script>";
 		//echo "<script>javascript:document.location='?lda_consulta';</script>";
 	}
 	
 	if ($_POST['acao'])
 	{
-		//se for uma movimenta��o
+		//se for uma movimentação
 		if ($acao == "Enviar")
 		{
 			checkPerm("LDAMOVIMENTAR");
 			$erro = Solicitacao::movimenta($idsolicitacao, $idsecretariadestino, $despacho, $anexomovimentacao);
 			if (empty($erro))
 			{
-				logger("Movimentou solicita��o.");
+				logger("Movimentou solicitação.");
 				//header("Location: index.php?lda_solicitacao");
 				echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=index.php?lda_solicitacao&$parametrosIndex'>";
 				
 			} 
 		}
-		//se for uma finaliza��o
+		//se for uma finalização
 		elseif ($acao == "Finalizar")
 		{
 			checkPerm("LDARESPONDER");
@@ -154,11 +153,11 @@
 
 			if (empty($erro))
 			{
-				logger("Finalizou solicita��o.");
+				logger("Finalizou solicitação.");
 				echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=index.php?lda_solicitacao&$parametrosIndex'>";
 			}
 		}
-		//se for uma prorroga��o
+		//se for uma prorrogação
 		elseif ($acao == "Prorrogar")
 		{
 			checkPerm("LDAPRORROGAR");
@@ -166,7 +165,7 @@
 
 			if (empty($erro))
 			{
-				logger("Prorrogou solicita��o.");
+				logger("Prorrogou solicitação.");
 				echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=index.php?lda_solicitacao&$parametrosIndex'>";
 			}
 		}

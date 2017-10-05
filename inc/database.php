@@ -11,7 +11,7 @@ function db_close($conn) {
     mysqli_close($conn) or die ("nao pode fechar a conexao");
 }
 
-//retorna objeto de conexao com o banco para transa��es
+//retorna objeto de conexao com o banco para transações
 function db_open_trans()
 {
 	//conecta ao mysqli

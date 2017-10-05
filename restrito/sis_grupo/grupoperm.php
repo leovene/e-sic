@@ -57,12 +57,12 @@ if ($_GET["idgrupo"] and !$_POST["updt"]) {
 	
 	<div class="container-fluid">
 	    <header class="header-title">
-	        <h1>Permiss�es do Perfil <?php echo $nomegrupo; ?></h1>
+	        <h1>Permissões do Perfil <?php echo $nomegrupo; ?></h1>
 	       	<ol class="breadcrumb">
 	            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">Dashboard</a></li>
-	            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?lda_configuracao">Administra��o</a></li>
+	            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?lda_configuracao">Administração</a></li>
 	            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?sis_grupo">Perfis</a></li>
-	            <li class="active">Permiss�es</li>
+	            <li class="active">Permissões</li>
 	        </ol>
 	    </header>
 	</div>

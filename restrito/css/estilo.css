@@ -55,7 +55,6 @@ th {
 	font-weight: normal;
 	font-size: 1em;
 }
-/* Milgalha de pão */
 #migalha_de_Pao {
 	display: inline-block;
 	background-color: #A1CDEE;
@@ -439,7 +438,6 @@ input[type='radio']{
 	
 }
 
-/*tabela de seleção de registro***********************/
 .tabLista th{
     background-color: #dbe5f9;
     padding: 10px;

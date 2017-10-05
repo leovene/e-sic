@@ -47,7 +47,6 @@
     //combo  - id do combo a ser preenchido
     //imagem - id da imagem a ser exibida durante o carregamento do combo
     //pagina - pagina que fara a pesquisa para preenchimento do combo
-    //campo  - valor do combo que ir� filtrar o preenchimento do combo
     function preencheCombo(combo,imagem,pagina,campo)
     {
         document.getElementById(combo).style.display='none';
@@ -317,7 +316,7 @@
                             <td align="left"><b>Origem:</b></td>
                             <td align="left" width="100%">
                                 <?php 
-                                //se origem nao for WEB ou for uma inclusao de demanda, exibe sele��o de origem
+                                //se origem nao for WEB ou for uma inclusao de demanda, exibe seleção de origem
                                 if ($origem != "W" or empty($iddemanda)){
                                     ?>
                                     <select name="origem" id="origem">

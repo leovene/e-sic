@@ -1,7 +1,7 @@
 <?php
 	include("../inc/database.php");
     
-	//recupera o quantitativo de solicita��es em aberto e respondidas por ano
+	//recupera o quantitativo de solicitações em aberto e respondidas por ano
 	$sql = "SELECT anoprotocolo as ano, 
 				   count(*) as qtde
 			FROM lda_solicitacao 
@@ -21,7 +21,7 @@
         while ($row = mysqli_fetch_assoc($rs)) {
 			$i++;	
 
-			//recupera o quantitativo de solicita��es no ano da itera��o que foram respondidas
+			//recupera o quantitativo de solicitações no ano da iteração que foram respondidas
 			$sql="select count(*) as tot from lda_solicitacao where anoprotocolo = ".$row['ano']." and situacao in('R')";
 			$rsResp = execQuery($sql);
 			$rowResp = mysqli_fetch_array($rsResp);

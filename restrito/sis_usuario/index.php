@@ -41,11 +41,11 @@ $rs = execQueryPag($sql);
 
 <div class="container-fluid">
     <header class="header-title">
-        <h1>Cadastro de Usu�rios</h1>
+        <h1>Cadastro de Usuários</h1>
         <ol class="breadcrumb">
-            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">In�cio</a></li>
-            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?lda_configuracao">Administra��o</a></li>
-            <li class="active">Cadastro de Usu�rios</li>
+            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">Início</a></li>
+            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?lda_configuracao">Administração</a></li>
+            <li class="active">Cadastro de Usuários</li>
         </ol>
     </header>
 </div>
@@ -79,7 +79,7 @@ $rs = execQueryPag($sql);
 				<div class="col-md-2 col-xs-12">
 					<div class="form-group">
 						<label for="matricula" class="input-label"><i class="material-icons">account_circle</i></label>
-						<input type="text" placeholder="Matr�cula" name="matricula" id="matricula" class="form-control icon" value="<?php echo $matricula?>"  maxlength="6" />
+						<input type="text" placeholder="Matrícula" name="matricula" id="matricula" class="form-control icon" value="<?php echo $matricula?>"  maxlength="6" />
 					</div>
 				</div>
 				<div class="col-md-2 col-xs-12">
@@ -108,7 +108,7 @@ $rs = execQueryPag($sql);
 					<tr>
 						<th></th>
 						<th>Codigo</th>
-						<th>Usu�rio</th>
+						<th>Usuário</th>
 						<th>CPF</th>
 						<th>Matricula</th>
 						<th>Login</th>

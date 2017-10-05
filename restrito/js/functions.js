@@ -1,12 +1,3 @@
-/**********************************************************************************
- Sistema e-SIC Livre: sistema de acesso a informa��o baseado na lei de acesso.
- 
- Copyright (C) 2014 Prefeitura Municipal de Piracaia
- 
- Este programa � software livre; voc� pode redistribu�-lo e/ou
- modific�-lo sob os termos da Licen�a GPL2.
-***********************************************************************************/
-
 function apagar(item,pasta){
   if (confirm("Tem certeza que deseja apagar?")) 
 	    //document.location =  "apagar.php?codigo=" + item;

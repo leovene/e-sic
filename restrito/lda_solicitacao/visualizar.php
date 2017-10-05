@@ -7,11 +7,11 @@
 <script src="../js/functions.js"></script>
 <div class="container-fluid">
     <header class="header-title">
-        <h1>Informa��es de Solicita��o</h1>
+        <h1>Informações de solicitação</h1>
         <ol class="breadcrumb">
-            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">In�cio</a></li>
+            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">Início</a></li>
             <li><a href="index.php?lda_consulta">Consulta</a></li>
-            <li class="active">Solicita��o</li>
+            <li class="active">solicitação</li>
         </ol>
     </header>
 </div>
@@ -82,7 +82,7 @@
 
     function executaOperacao(acao)
     {
-        if(confirm("Confirma opera��o?"))
+        if(confirm("Confirma operação?"))
         {
             document.getElementById("acao").value = acao;
             document.getElementById("formulario").submit();
@@ -134,12 +134,12 @@
             <td align="left" valign="top">
                 <b>Solicita&ccedil;&atilde;o Recebida em</b>
                 <br>
-                <?php echo !empty($datarecebimentosolicitacao)?$datarecebimentosolicitacao." por ".$usuariorecebimento:"N�o Recebido";?>
+                <?php echo !empty($datarecebimentosolicitacao)?$datarecebimentosolicitacao." por ".$usuariorecebimento:"não Recebido";?>
             </td>
             <td align="left" valign="top">
                 <b>Porroga&ccedil;&atilde;o</b>
                 <br>
-                <?php echo !empty($dataprorrogacao)?"Prorrogado em: ".$dataprorrogacao." por ".$usuarioprorrogacao. "<brMotivo: ".$motivoprorrogacao:"N�o Prorrogado";?>
+                <?php echo !empty($dataprorrogacao)?"Prorrogado em: ".$dataprorrogacao." por ".$usuarioprorrogacao. "<brMotivo: ".$motivoprorrogacao:"não Prorrogado";?>
             </td>
         </tr>
         <tr id="lnDemanda3">
@@ -263,7 +263,7 @@
                 </table>
             </td>
         </tr>
-        <?php if($instancia == "I") { //se for solicita��o inicial, mostra os recursos se houver
+        <?php if($instancia == "I") { //se for solicitação inicial, mostra os recursos se houver
                 
                     $rsRec = Solicitacao::getRecursos($idsolicitacao);
                     if(mysqli_num_rows($rsRec) > 0)

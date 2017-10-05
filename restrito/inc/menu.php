@@ -42,7 +42,7 @@ $row = mysqli_fetch_array($rs);
         }
         if(!$existe)
         {
-            echo "Voc� n�o tem permiss�o de acesso a esta p�gina.";
+            echo "Você não tem permissão de acesso a esta página.";
         }
         ?>
 </div>

@@ -12,7 +12,7 @@ $sql = "delete from sis_grupo where idgrupo = '$codigo'";
   }
   else
   {
-	logger("Perfil Exclu�do com Sucesso.");
+	logger("Perfil Ecluído com Sucesso.");
   }
 
 $txt = explode("?", $_SERVER['REQUEST_URI']);

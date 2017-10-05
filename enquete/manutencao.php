@@ -12,7 +12,7 @@ function validaDados()
 	
 	if (empty($resposta))
 	{
-		$erro = "Por favor selecione uma op��o de resposta!";
+		$erro = "Por favor selecione uma opção de resposta!";
 		return false;
 	}
 	

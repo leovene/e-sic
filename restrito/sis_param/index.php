@@ -7,7 +7,7 @@ $sql = "select * from sis_param";
 
 if ($_REQUEST['imprimir'])
 {
-	generateReport(array("!PATH" => "sis_Param.jasper", "@sql" => $sql, "@usuario" => $_SESSION['usuario'], "@titulo" => "Relat�rio de Parametros"));
+	generateReport(array("!PATH" => "sis_Param.jasper", "@sql" => $sql, "@usuario" => $_SESSION['usuario'], "@titulo" => "Relatório de Parametros"));
 }
 
 $x = iniciaGrid("edita('%Sistema%','%diretorioarquivos%','%urlarquivos%')",null,"novo()"); 

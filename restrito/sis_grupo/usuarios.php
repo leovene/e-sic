@@ -78,12 +78,12 @@
 
 <div class="container-fluid">
     <header class="header-title">
-        <h1>Usu�rios do Perfil - <span class="group" data-text="grupo"><?php echo $nomegrupo; ?></span></h1>
+        <h1>Usuários do Perfil - <span class="group" data-text="grupo"><?php echo $nomegrupo; ?></span></h1>
        	<ol class="breadcrumb">
             <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">Dashboard</a></li>
-            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?lda_configuracao">Administra��o</a></li>
+            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?lda_configuracao">Administração</a></li>
             <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/?sis_grupo">Perfis</a></li>
-            <li class="active">Usu�rios do Perfil</li>
+            <li class="active">Usuários do Perfil</li>
         </ol>
     </header>
 </div>
@@ -98,8 +98,8 @@
 	                <table border="0" width="100%">
 	                    <tr>
 	                        <td valign="top" align="center">
-	                            <header>Usu�rios</header>
-	                            <select name="usuarios" id="usuarios" title="D� um duplo clique para selecionar todos" ondblclick="selecionatudo(this.id);" multiple="multiple" style="height: 300px; width: 300px; font-size:10">
+	                            <header>Usuários</header>
+	                            <select name="usuarios" id="usuarios" title="Dê um duplo clique para selecionar todos" ondblclick="selecionatudo(this.id);" multiple="multiple" style="height: 300px; width: 300px; font-size:10">
 	                                <?php
 	                            $sql="select login from sis_usuario u where status = 'A' order by login";
 	                            
@@ -127,8 +127,8 @@
 	                            </center>
 	                        </td>
 	                        <td valign="top" align="center">
-	                            <header>Usu�rios do Perfil</header>
-	                            <select name="selecionados[]" id="selecionados" title="D� um duplo clique para selecionar todos" ondblclick="selecionatudo(this.id);" multiple="multiple" style="height: 300px; width: 300px; font-size:10">
+	                            <header>Usuários do Perfil</header>
+	                            <select name="selecionados[]" id="selecionados" title="Dê um duplo clique para selecionar todos" ondblclick="selecionatudo(this.id);" multiple="multiple" style="height: 300px; width: 300px; font-size:10">
 	                                <?php foreach ($selecionados as $user) { ?>
 	                                <option value="<?php echo $user; ?>" selected>
 	                                    <?php echo $user; ?>

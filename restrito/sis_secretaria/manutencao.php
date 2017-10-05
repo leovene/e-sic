@@ -1,7 +1,7 @@
 <?php
 	include_once("../inc/autenticar.php");
 
-	//fun��o de valida��o dos dados do formulario do cadastro de usuario -------------------
+	//função de validação dos dados do formulario do cadastro de usuario -------------------
 	function validaDados()
 	{
 		global $erro;
@@ -16,12 +16,12 @@
 				
 		if (empty($nome))
 		{
-			$erro = "Nome n�o informado.";
+			$erro = "Nome não informado.";
 			return false;
 		}
 		elseif (empty($sigla))
 		{
-			$erro = "Sigla n�o informada.";
+			$erro = "Sigla não informada.";
 			return false;
 		}
 		
@@ -29,7 +29,7 @@
 		
                 if(empty($siccentral)) $siccentral = "0";
 		
-		//verifica se ja existe registro cadastrado com a informa�ao passada ---
+		//verifica se ja existe registro cadastrado com a informação passada ---
 		
 		if ($acao=="Incluir")
 			$sql = "select * from sis_secretaria where sigla = '$sigla'";
@@ -38,7 +38,7 @@
 			
 		if(mysqli_num_rows(execQuery($sql)) > 0)
 		{
-			$erro = "J� existe SIC cadastrada com a sigla informada";
+			$erro = "já existe SIC cadastrada com a sigla informada";
 			return false;
 		}
 		//-----------------------------------------------------------------------
@@ -50,7 +50,7 @@
 	$codigo = $_GET["codigo"];
 	$acao	= "Incluir";
 
-	//se for passado codigo para edi��o e nao tiver sido postado informa��o do formulario busca dados do banco
+	//se for passado codigo para Edição e nao tiver sido postado Informação do formulario busca dados do banco
 	if(!$_POST['Alterar'] and !empty($codigo))
 	{
 		$acao	= "Alterar";
@@ -109,7 +109,7 @@
 			}
 		}
 	}
-	//se for uma altera��o
+	//se for uma alteração
 	elseif ($_POST['Alterar'])
 	{
 	   	$acao	= "Alterar";	

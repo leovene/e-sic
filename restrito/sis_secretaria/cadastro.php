@@ -8,9 +8,9 @@ include_once "manutencao.php";
     <header class="header-title">
         <h1>Cadastro de SIC</h1>
         <ol class="breadcrumb">
-            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">In�cio</a></li>
+            <li><a href="<?php echo URL_BASE_SISTEMA; ?>index/">Início</a></li>
             <li><a href="index.php?sis_secretaria">Cadastro de SIC</a></li>
-            <li class="active">Edi��o</li>
+            <li class="active">Edição</li>
         </ol>
     </header>
 </div>
@@ -46,7 +46,7 @@ include_once "manutencao.php";
                     <div class="col-md-2 col-sm-4 col-xs-12">
                         <div class="form-group">
                             <label for="responsavel" class="input-label"><i class="material-icons">account_circle</i></label>
-                            <input type="text" class="form-control icon" id="responsavel" name="responsavel" value="<?php echo $responsavel; ?>" maxlength="10" size="10" title="Respons�vel do SIC" placeholder="Respons�vel do SIC"/>
+                            <input type="text" class="form-control icon" id="responsavel" name="responsavel" value="<?php echo $responsavel; ?>" maxlength="10" size="10" title="ResponSóvel do SIC" placeholder="ResponSóvel do SIC"/>
                         </div>
                     </div>  					
 					<div class="col-sm-4 col-md-4 col-xs-12">

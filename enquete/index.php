@@ -25,7 +25,7 @@
 <?php
 if($_POST['Enviar'] and empty($erro))
 {
-    echo "Sua avalia��o foi cadastrada com sucesso!<br><br>Obrigado por sua colabora��o!";
+    echo "Sua avaliação foi cadastrada com sucesso!<br><br>Obrigado por sua colaboração!";
 }
 else
 {

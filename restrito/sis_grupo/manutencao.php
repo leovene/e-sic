@@ -2,7 +2,7 @@
 	include_once("../inc/autenticar.php");
 	checkPerm("LSTGRP");
 	
-	//fun��o de valida��o dos dados do formulario do cadastro de usuario -------------------
+	//função de validação dos dados do formulario do cadastro de usuario -------------------
 	function validaDados()
 	{
 		global $erro;
@@ -14,17 +14,17 @@
 				
 		if (empty($nome))
 		{
-			$erro = "Nome n�o informado.";
+			$erro = "Nome não informado.";
 			return false;
 		}
 		else if (empty($descricao))
 		{
-			$erro = "Descri��o n�o informada.";
+			$erro = "Descrição não informada.";
 			return false;
 		}
 
 
-		//verifica se ja existe registro cadastrado com a informa�ao passada ---
+		//verifica se ja existe registro cadastrado com a informação passada ---
 		if ($acao=="Incluir")
 			$sql = "select * from sis_grupo where nome = '$nome'";
 		else
@@ -32,7 +32,7 @@
 			
 		if(mysqli_num_rows(execQuery($sql)) > 0)
 		{
-			$erro = "Nome do perfil j� existe no cadastro.";
+			$erro = "Nome do perfil já existe no cadastro.";
 			return false;
 		}
 		//-----------------------------------------------------------------------
@@ -66,11 +66,11 @@
         $descricao      = $_POST["descricao"];
         $ativo	        = $_POST["ativo"];
         
-	//se tiver sido postado informa��o do formulario
+	//se tiver sido postado Informação do formulario
 	if ($_POST['acao'])
 	{
 		
-		//verifica a��o do usuario
+		//verifica ação do usuario
 		switch ($acao)
 		{
 			//se for uma inclusao
@@ -93,7 +93,7 @@
 					}
 				}
 				break;
-			//se for uma altera��o
+			//se for uma alteração
 			case "Alterar":  		
 				checkPerm("UPTGRP");	
 				

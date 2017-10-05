@@ -3,7 +3,6 @@
         include_once(DIR_CLASSES_LEIACESSO."/solicitacao.class.php");
 	checkPerm("LSTGRP");
 	
-	//fun��o de valida��o dos dados do formulario do cadastro de usuario -------------------
 	function validaDados()
 	{
 		global $erro;
@@ -15,17 +14,16 @@
 				
 		if (empty($nome))
 		{
-			$erro = "Nome n�o informado.";
+			$erro = "Nome não informado.";
 			return false;
 		}
 		else if (empty($instancia))
 		{
-			$erro = "Inst�ncia n�o informada.";
+			$erro = "Instância não informada.";
 			return false;
 		}
 
 
-		//verifica se ja existe registro cadastrado com a informa�ao passada ---
 		if ($acao=="Incluir")
 			$sql = "select * from lda_tiposolicitacao where nome = '$nome'";
 		else
@@ -33,7 +31,7 @@
 			
 		if(mysqli_num_rows(execQuery($sql)) > 0)
 		{
-			$erro = "Nome do tipo de instancia j� existe no cadastro.";
+			$erro = "Nome do tipo de instancia já existe no cadastro.";
 			return false;
 		}
 		//-----------------------------------------------------------------------
@@ -47,7 +45,7 @@
 				
 			if(mysqli_num_rows(execQuery($sql)) > 0)
 			{
-				$erro = "S� pode existir uma inst�ncia cadastrada como inicial.";
+				$erro = "Só pode existir uma instância cadastrada como inicial.";
 				return false;
 			}
 		}
@@ -82,11 +80,10 @@
         $idtiposolicitacao_seguinte = ($_POST["idtiposolicitacao_seguinte"]=="-1")?"":$_POST["idtiposolicitacao_seguinte"];
         $instancia                  = $_POST["instancia"];
         
-	//se tiver sido postado informa��o do formulario
 	if ($_POST['acao'])
 	{
 		
-		//verifica a��o do usuario
+		//verifica ação do usuario
 		switch ($acao)
 		{
 			//se for uma inclusao
@@ -109,8 +106,7 @@
 					}
 				}
 				break;
-			//se for uma altera��o
-			case "Alterar":  		
+			case "Alterar":
 				checkPerm("UPTTIPOSOL");	
 				
 				if(validaDados())
@@ -124,13 +120,13 @@
 
 					if (execQuery($sql))
 					{
-						logger("Tipo de solicita��o alterado com sucesso");  
+						logger("Tipo de solicitação alterado com sucesso");
 						limpaDados();
 					}
 					else
 					{
 					
-						$erro = "Ocorreu um erro ao alterar tipo de solicita��o.";
+						$erro = "Ocorreu um erro ao alterar tipo de solicitação.";
 					}
 				}
 				break;
@@ -138,8 +134,7 @@
 	}
         else if($_POST['idtiposolicitacao_seguinte'])
         {
-            //se for uma ordena��o
-            checkPerm("UPTTIPOSOL");	
+            checkPerm("UPTTIPOSOL");
 
             $sql = "UPDATE lda_tiposolicitacao set 
                         idtiposolicitacao_seguinte = ".(empty($idtiposolicitacao_seguinte)?"null":$idtiposolicitacao_seguinte).",
@@ -150,13 +145,13 @@
             
             if (execQuery($sql))
             {
-                    logger("Ordem do tipo de solicita��o alterado com sucesso");  
+                    logger("Ordem do tipo de solicitação alterado com sucesso");
                     limpaDados();
             }
             else
             {
 
-                    $erro = "Ocorreu um erro ao alterar tipo de solicita��o.";
+                    $erro = "Ocorreu um erro ao alterar tipo de solicitação.";
             }
 
         }

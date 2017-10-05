@@ -4,10 +4,10 @@
 	include_once("./solicitante.class.php"); //o mesmo arquivo foi adicionado na pasta solicitante e modigficado para nao interferi no cadastro de usuarios
 	
 	
-	$erro = "";	//grava o erro, se houver, e exibe por meio de alert (javascript) atraves da funcao getErro() chamada no arquivo do formulario. ps: a fun��o � declara em inc/security.php
+	$erro = "";	//grava o erro, se houver, e exibe por meio de alert (javascript) atraves da funcao getErro() chamada no arquivo do formulario. ps: a função é declara em inc/security.php
 
 	
-	//se tiver sido postado informa��o do formulario
+	//se tiver sido postado Informação do formulario
 	if($_POST['acao'])
 	{
 
@@ -70,7 +70,7 @@
 		
 		if(!empty($idsolicitante))
 		{
-			//resgata os dados do banco para exibi��o no form
+			//resgata os dados do banco para exebição no form
 			$solicitante = new Solicitante($idsolicitante);
                 
                         

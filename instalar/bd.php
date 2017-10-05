@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <p><strong>Aten&ccedil;&atilde;o!</strong> Para prosseguir, verifique se o banco de dados <code><?php echo DBNAME; ?></code> existe e se o usu&aacute;rio <code><?php echo DBUSER; ?></code> det&eacute;m todas as permiss&otilde;es para ele.</p>
         
         <form action="bd.php" method="post">
-        	<p><input type="checkbox" name="cep" value="cep" id="cep" checked><label for="cep">Carregar informa��es de CEP, logradouros e bairros.</label></p>
+        	<p><input type="checkbox" name="cep" value="cep" id="cep" checked><label for="cep">Carregar Informações de CEP, logradouros e bairros.</label></p>
             <input type="hidden" value="0" name="etapa">
             <input type="submit" value="Prosseguir" id="prosseguir" onClick="document.getElementById('prosseguir').disabled = false;">
 			

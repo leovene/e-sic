@@ -2,7 +2,6 @@
 	include_once("../inc/autenticar.php");
 	checkPerm("LSTLDACONF");
 	
-	//fun��o de valida��o dos dados do formulario do cadastro de usuario -------------------
 	function validaDados()
 	{
 		global $erro;
@@ -38,7 +37,6 @@
 	//------------------------------------------------------------------------------------------
 	$erro	= "";
 	
-	//se tiver sido postado informa��o do formulario
 	if ($_POST['acao'])
 	{
 	
@@ -54,7 +52,6 @@
 		$nomeremetenteemail         = $_POST["nomeremetenteemail"];
 		$emailremetente             = $_POST["emailremetente"];		
 		
-		//verifica a��o do usuario
 		if ($acao == "Salvar")
                 {
                         checkPerm("UPTLDACONF");
@@ -75,12 +72,12 @@
 
                                 if (execQuery($sql))
                                 {
-                                        logger("Alterado configura��o do lei de acesso.");
-                                        echo "<script>alert('Configura��o atualizada com sucesso!');</script>";
+                                        logger("Alterado configuração do lei de acesso.");
+                                        echo "<script>alert('Configuração atualizada com sucesso!');</script>";
                                 }
                                 else
                                 {
-                                        $erro = "Ocorreu um erro ao atualizar configura��o.";
+                                        $erro = "Ocorreu um erro ao atualizar configuração.";
                                 }
                         }
                                 

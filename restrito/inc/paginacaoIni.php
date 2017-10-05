@@ -23,8 +23,7 @@
 		
 	}
 	
-	// Declara��o da pagina inicial  
-	$pagina = $_GET["pagina"];  
+	$pagina = $_GET["pagina"];
 	if($pagina == "") 
 	{  
 		$pagina = "1";  
@@ -46,8 +45,6 @@
 
 	$resultado = execQueryPag($sql);
 	
-	//inclui o arquivo paginacaoFim.php onde serao exibidos os controles da pagina��o, tem q ser abaixo da inclusao desse e depois da consulta
-
 */
 	
 ?>
