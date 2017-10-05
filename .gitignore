@@ -3,3 +3,4 @@ js/RGraph/demos
 /.idea/
 /restrito/inc/config.php
 .gitignore
+esic.sql
