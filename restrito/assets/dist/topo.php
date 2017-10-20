@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-        <title> Lei de Acesso </title>
+        <title> SIC: Sistema de Informação ao Cidadão </title>
 		 
 		<!-- CSS -->
 		<meta name="verify-v1" content="miqBcW00PywY1Jm7/yQP8ztDacIWFV9gQRTCmHuai9w=" />

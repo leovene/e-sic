@@ -9,7 +9,7 @@
 <br>
 <?php if(!empty($_GET['r'])){?>
           Cadastro Realizado com sucesso! <br><br>
-          Em instantes você receberá uma solicitação de confirmação do cadastro no seu e-mail: <?php echo $_GET['r']?>.<br>
+          Em instantes vocÃª receberÃ¡ uma solicitaÃ§Ã£o de confirmaÃ§Ã£o do cadastro no seu e-mail: <?php echo $_GET['r']?>.<br>
 <?php }else{?>
         <form action="<?php echo SITELNK;?>cadastro/index.php" id="formulario" method="post">
         <?php include_once("../cadastro/formulario.php");?>

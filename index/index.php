@@ -152,7 +152,7 @@ include("../inc/topo.php");
 							<a href="../manual/informacao.php">Como pedir uma informação</a>
 						</td>
 						<td>
-							<a href="../manual/decreto.php">Decreto</a>
+							<a href="http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm">Lei 12.527</a>
 						</td>
 						<td>
 							<a href="http://www.acessoainformacao.gov.br/acessoainformacaogov/">Acesso à informação CGU</a>
@@ -174,7 +174,7 @@ include("../inc/topo.php");
 							<a href="../manual/recurso.php">Como entrar com um recurso</a>
 						</td>
 						<td>
-							Leis
+                            <a href="http://35.193.180.200/legislacao/leis/">Leis</a>
 						</td>
 						<td>
 							

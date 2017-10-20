@@ -4,6 +4,7 @@ require_once("config.php");
 function db_open() {
 
     $conn = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME) or die('nao pode conectar ao banco');
+    mysqli_set_charset($conn,'utf8');
     return $conn;
 }
 

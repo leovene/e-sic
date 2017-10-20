@@ -121,7 +121,7 @@
 					<td align="left">CEP:</td>
 					<td align="left">
 						<input type="text" name="cep" id="cep" value="<?php echo $cep;?>" autocomplete="off" onkeyup="busca(this.value,this.value.length==8,'<?php echo URL_BASE_SISTEMA;?>inc/buscacep')" onclick="busca(this.value,this.value.length==8,'<?php echo URL_BASE_SISTEMA;?>inc/buscacep')" maxlength="8" size="10" />		
-						<a href="http://www.buscacep.correios.com.br/servicos/dnec/menuAction.do?Metodo=menuEndereco" target="_blank"><img src="<?php echo URL_BASE_SISTEMA;?>img/busca_cep_correios.gif" border="0" align="absmiddle" style="margin:0px;padding:0px" title="Pesquisa CEP no site dos correios"></a>
+						<a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" target="_blank"><img src="<?php echo URL_BASE_SISTEMA;?>img/busca_cep_correios.gif" border="0" align="absmiddle" style="margin:0px;padding:0px" title="Pesquisa CEP no site dos correios"></a>
 					</td>
 				</tr>
 				<tr>

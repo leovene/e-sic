@@ -2,7 +2,7 @@
 	include_once("../inc/security.php");
 	
 	
-	$erro   = "";	//grava o erro, se houver, e exibe por meio de alert (javascript) atraves da funcao getErro() chamada no arquivo do formulario. ps: a função é declara em inc/security.php
+	$erro   = "";	//grava o erro, se houver, e exibe por meio de alert (javascript) atraves da funcao getErro() chamada no arquivo do formulario. ps: a funÃ§Ã£o Ã© declara em inc/security.php
 
         $acao 		= "";
         $nome 		= "";
@@ -27,7 +27,7 @@
         $confirmasenha	= "";
         
 	
-	//se tiver sido postado informação do formulario
+	//se tiver sido postado informaÃ§Ã£o do formulario
 	if($_POST['acao'])
 	{
 

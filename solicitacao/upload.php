@@ -76,6 +76,7 @@ function enviadados(){
 		
 		//insere em lda_anexo dados do arquivo 
 		$conect = mysqli_connect(DBHOST,DBUSER,DBPASS) or die('Erro ao conectar ao banco de dados');
+        mysqli_set_charset($conect,'utf8');
 		mysqli_select_db(DBNAME);
 		$sql="INSERT INTO lda_anexo ( idsolicitacao,
 									  nome,

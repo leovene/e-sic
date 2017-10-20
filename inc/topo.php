@@ -1,16 +1,13 @@
-<?php
-include("config.php");
-?>
+<?php include("config.php"); ?>
 <!DOCTYPE html>
 <html>
 	<head>
-                <title> Lei de Acesso </title>
+                <title> SIC: Sistema de InformaÃ§Ã£o ao CidadÃ£o </title>
 		 
 		<!-- CSS -->
 		<meta name="verify-v1" content="miqBcW00PywY1Jm7/yQP8ztDacIWFV9gQRTCmHuai9w=" />
 		<!-- TAG PARA O GOOGLEBOT -->
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-               <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
               <meta http-equiv="X-UA-Compatible" content="IE=edge">
               <meta name="viewport" content="width=device-width, initial-scale=1">
                <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -24,12 +21,12 @@ include("config.php");
          <![endif]-->
 	
 
-		<meta name="E-Sic Livre" content="Portal da Prefeitura Municipal do Natal - SEMPLA - Secretaria de Planejamento, Orçamento e Finanças" />
+		<meta name="E-Sic Livre" content="Portal da Prefeitura Municipal do Natal - SEMPLA - Secretaria de Planejamento, OrÃ§amento e FinanÃ§as" />
 		<meta http-equiv="pragma" content="no-cache" />
                 <meta name="revisit-after" content="1" />
 		<meta name="classification" content="Internet" />	
-		<meta name="description" content="Portal da Prefeitura Municipal do Natal - SEMPLA - Secretaria de Planejamento, Orçamento e Finanças" />
-		<meta name="keywords" content="Prefeitura do Natal, natal, rn, sempla, natal, rn, noticias, serviços" />
+		<meta name="description" content="Portal da Prefeitura Municipal do Natal - SEMPLA - Secretaria de Planejamento, OrÃ§amento e FinanÃ§as" />
+		<meta name="keywords" content="Prefeitura do Natal, natal, rn, sempla, natal, rn, noticias, serviÃ§os" />
 		<meta name="robots" content="ALL" />
 		<meta name="distribution" content="Global" />
 		<meta name="rating" content="General" />
@@ -51,30 +48,6 @@ include("config.php");
 		<div id="out">
 			<div id="conteudo">
 				<div id="cabecalho">
-					<div id="faixa">
-						<ul>
-							<img id="home" src="../css/img/home.png" alt="Imagem E-sic Livre"/>
-							<li class="opcao"><a target="_blank" href="http://35.193.180.200/">Principal</a></li>
-							<img src="../css/img/pipe.png" alt="Imagem E-sic Livre" />
-							<li class="opcao"><a target="_blank" href="http://35.193.180.200/ouvidoria/">Ouvidoria</a></li>
-							<img src="../css/img/pipe.png" alt="Imagem E-sic Livre"/>
-							<li class="opcao"><a target="_blank" href="http://35.193.180.200/secretarias">Secretarias e &Oacute;rg&atilde;os</a></li>
-							<img src="../css/img/pipe.png" alt="Imagem E-sic Livre" />
-							<li class="opcao"><a href="http://35.193.180.200/fale-conosco">Fale conosco</a></li>
-							<img src="../css/img/pipe.png" alt="Imagem E-sic Livre"/>
-							<li class="opcao"><a target="_blank" href="http://35.193.180.200/transparencia/">Portal da Transpar&ecirc;ncia</a></li>
-						</ul>
-					</div>
-					
-					<div id="logo">
-							<a href="../index"><img src="../css/img/logo.png" alt="Imagem E-sic Livre"></a>
-					</div>
-					
-					<div id="esic">
-							<a><img src="../css/img/eSIC.png" alt="Imagem E-sic Livre"></a>
-					</div>
-					
-                                    
 					<div id="menu">
 						<ul>
                                                     <?php if (!empty($_SESSION[SISTEMA_CODIGO])) { ?>
@@ -84,7 +57,7 @@ include("config.php");
                                                                     <img src="../css/img/pipe.png" alt="Imagem E-sic Livre" />
                                                                     <li class="opcao"><a href="../solicitante">Alterar Cadastro</a></li>
                                                                     <img src="../css/img/pipe.png" alt="Imagem E-sic Livre"/>
-                                                                    <li class="opcao"><a href="../alterasenha">Alterar Senha</a></li>		
+                                                                    <li class="opcao"><a href="../alterasenha">Alterar Senha</a></li>
                                                                     <img src="../css/img/pipe.png" alt="Imagem E-sic Livre"/>
                                                                     <li class="opcao"><a href="../solicitacao">Fazer Solicita&ccedil;&atilde;o</a></li>
                                                                     <img src="../css/img/pipe.png" alt="Imagem E-sic Livre"/>
@@ -107,9 +80,9 @@ include("config.php");
                                                             </ul>
                                                     <?php }?>
 						</ul>
-					</div>	
+					</div>
 					</div>
 					
 					<div id="corpo">
-</header>
+        </header>
 

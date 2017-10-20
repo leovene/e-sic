@@ -28,11 +28,11 @@ include("../inc/topo.php");
         </tr>
         <tr>
           <td bgcolor="#F4F8FB" class="tabela-L1">&nbsp;</td>
-          <td height="52" valign="top" bgcolor="#F4F8FB" class="texto"><p>1. Dirija-se &agrave; unidade f&iacute;sica do SIC pertencente ao org&atilde;o ao qual voc&ecirc; pretende solicitar a informa&ccedil;&atilde;o. </p>
+          <td height="52" valign="top" bgcolor="#F4F8FB" class="texto"><p>Para formular seu pedido pessoalmente: dirija-se à Prefeitura no Setor de Protocolo.</p>
            <p>
 		   <br>
 			<span class="tabela-L2">
-			2. Preencha o Formul&aacute;rio de Acesso:
+			Endereço: Avenida Doutor Cândido Rodrigues, nº 120 - Centro –CEP:12970-000 - Piracaia - SP
 			<br>
 			<a class="linkBlack" target="_blank" href="arquivos/formulario-solicitacao-informacao-pn.pdf">Pessoa natural</a>
 			&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
@@ -40,24 +40,22 @@ include("../inc/topo.php");
 			</span>
 			<br>
 			<br>
-            <p>3. Aguarde a inser&ccedil;&atilde;o da solicita&ccedil;&atilde;o no e-SIC e receba o seu n&uacute;mero de protocolo. Guarde o seu n&uacute;mero de protocolo, pois ele &eacute; o comprovante do cadastro da solicita&ccedil;&atilde;o via sistema. <br>
+            <p>Horário de Atendimento : de Segunda a Sexta-feira das 09:00hs às 16:00hs Fone : 11 4036-2040<br>
               <br>
             </p></td>
           <td class="texto"></td>
           <td height="52" bgcolor="#F4F8FB" class="texto">&nbsp;</td>
-          <td height="52" bgcolor="#F4F8FB" class="texto"><p>1. Acesse o e-SIC (Sistema Eletr&ocirc;nico do Servi&ccedil;oo de Informa&ccedil;&otilde;es ao
+          <td height="52" bgcolor="#F4F8FB" class="texto"><p>Acesse o e-SIC (Sistema Eletr&ocirc;nico do Servi&ccedil;oo de Informa&ccedil;&otilde;es ao
             Cidad&atilde;o): <br>
 			<br>
-            <a href="http://www.natal.rn.gov.br/leideacesso" target="_blank" class="linkBlack">www.natal.rn.gov.br/leideacesso</a></p>
+            <a href="http://www.natal.rn.gov.br/leideacesso" target="_blank" class="linkBlack">http://www.piracaia.sp.gov.br</a></p>
             <br>
-			<p>2. No sistema, clique em "Cadastre-se"&#157; para realizar o seu cadastro no sistema. Na pr&oacute;pria tela de cadastro, voc&ecirc; ir&aacute; escolher seu nome de usu&aacute;rio e a senha de acesso.</p>
+			<p>Para formular seu pedido pessoalmente: dirija-se à Prefeitura no Setor de Protocolo.</p>
 			<br>
-            <p>3. Acesse o sistema com seu nome de usu&aacute;rio e senha.</p>
+            <p>Endereço: Avenida Doutor Cândido Rodrigues, nº 120 - Centro –CEP:12970-000 - Piracaia - SP</p>
 			<br>
-            <p>4. Clique em "Registrar Pedido"&#157; e preencha o formul&aacute;rio de solicita&ccedil;&atilde;o de pedido. Aten&ccedil;&atilde;o: Antes de realizar o pedido, leia atentamente as dicas para o pedido e conhe&ccedil;a os procedimentos que devem ser adotados para fazer sua solicita&ccedil;&atilde;o.<br>
+            <p>Horário de Atendimento : de Segunda a Sexta-feira das 09:00hs às 16:00hs Fone : 11 4036-2040<br>
             <br>
-			<p>5. O e-SIC ir&aacute; disponibilizar um n&uacute;mero de protocolo e, tamb&eacute;m, o enviar&atilde;o por e-mail. Guarde o seu n&uacute;mero de protocolo, pois ele &eacute; o comprovante do cadastro da solicita&ccedil;&atilde;o via sistema.<p>
-			 <br>
             </p></td>
         </tr>
       </tbody></table>
