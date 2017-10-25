@@ -40,7 +40,7 @@ include("../inc/topo.php");
           <td height="52" bgcolor="#F4F8FB" class="texto"><p>1. Acesse o e-SIC (Sistema Eletr&ocirc;nico do Servi&ccedil;o de Informa&ccedil;&otilde;es ao
             Cidad&atilde;o): <br>
 			<br>
-            <a href="http://www.natal.rn.gov.br/leideacesso" target="_blank" class="linkBlack">www.natal.rn.gov.br/leideacesso</a></p>
+            <a href="http://35.193.180.200/" target="_blank" class="linkBlack">http://www.piracaia.sp.gov.br</a></p>
             <br>
 			<p>2. Insira o seu login e senha para acessar o sistema.</p>
             <br>
